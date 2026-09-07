@@ -145,7 +145,7 @@ export default function Index() {
           <Link to="/#work">Work</Link>
           <Link to="/#experience">Experience</Link>
           <Link to="/#about">About</Link>
-          <a className="nav-resume" href="https://urlcut.ai/pushpenderux" target="_blank" rel="noreferrer">
+          <a className="nav-resume" href="https://drive.google.com/file/d/1__8G6ZHDYltuZUdplqrhPwu8yfFoEAL1/view?usp=sharing" target="_blank" rel="noreferrer">
             Resume <ArrowUpRight size={13} strokeWidth={2.5} />
           </a>
         </nav>
@@ -163,7 +163,7 @@ export default function Index() {
             <Link to="/#work" onClick={closeMenu}>Work <ArrowUpRight size={15} /></Link>
             <Link to="/#experience" onClick={closeMenu}>Experience <ArrowUpRight size={15} /></Link>
             <Link to="/#about" onClick={closeMenu}>About <ArrowUpRight size={15} /></Link>
-            <a href="https://urlcut.ai/pushpenderux" target="_blank" rel="noreferrer" onClick={closeMenu}>Resume <ArrowUpRight size={15} /></a>
+            <a href="https://drive.google.com/file/d/1__8G6ZHDYltuZUdplqrhPwu8yfFoEAL1/view?usp=sharing" target="_blank" rel="noreferrer" onClick={closeMenu}>Resume <ArrowUpRight size={15} /></a>
           </nav>
         )}
       </header>
@@ -179,7 +179,7 @@ export default function Index() {
         </p>
         <div className="hero__actions">
           <Link className="button button--dark" to="/#work">View my work <ArrowDownRight size={16} /></Link>
-          <a className="button button--outline" href="https://urlcut.ai/pushpenderux" target="_blank" rel="noreferrer">Download resume <Download size={15} /></a>
+          <a className="button button--outline" href="https://drive.google.com/file/d/1__8G6ZHDYltuZUdplqrhPwu8yfFoEAL1/view?usp=sharing" target="_blank" rel="noreferrer">Download resume <Download size={15} /></a>
         </div>
         <div className="hero__rule" aria-hidden="true" />
         <div className="hero__side-note">Scroll to explore <ArrowDownRight size={15} /></div>
@@ -297,7 +297,7 @@ export default function Index() {
         </div>
         <h2>Have a good problem<br />to solve?</h2>
         <p>For a closer look at my experience, process, and the work behind the work, take a look at my resume.</p>
-        <a className="button button--light" href="https://urlcut.ai/pushpenderux" target="_blank" rel="noreferrer">View my resume <ArrowUpRight size={16} /></a>
+        <a className="button button--light" href="https://drive.google.com/file/d/1__8G6ZHDYltuZUdplqrhPwu8yfFoEAL1/view?usp=sharing" target="_blank" rel="noreferrer">View my resume <ArrowUpRight size={16} /></a>
         <div className="resume-cta__footer">
           <span>Pushpender Sharma · UX Designer</span>
           <a href="mailto:pushpender.sharmaoffical@outlook.com">pushpender.sharmaoffical@outlook.com</a>
