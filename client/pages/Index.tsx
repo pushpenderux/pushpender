@@ -2,68 +2,78 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowDownRight,
+  ArrowRight,
   ArrowUpRight,
   Check,
   Download,
+  Layers3,
+  Mail,
   Menu,
+  MousePointer2,
+  ScanLine,
   Sparkles,
   X,
 } from "lucide-react";
 
-const workItems = [
+const resumeUrl = "https://drive.google.com/file/d/1__8G6ZHDYltuZUdplqrhPwu8yfFoEAL1/view?usp=sharing";
+
+const projects = [
   {
     number: "01",
-    type: "Product design / e-commerce",
+    category: "Product design · 2020—24",
+    client: "Shop LC",
     title: "A clearer path to checkout",
-    company: "Shop LC",
     description:
-      "A web and mobile UX overhaul that brought focus to the shopping journey, from the first product interaction through a simpler, more confident checkout.",
-    tags: ["UX / UI", "Research", "Accessibility"],
-    accent: "mint",
+      "A web and mobile UX overhaul that made the shopping journey easier to understand, from the first product interaction to a more confident checkout.",
+    tags: ["UX / UI", "Research", "WCAG"],
+    tone: "blue",
+    size: "large",
   },
   {
     number: "02",
-    type: "Creative systems / generative AI",
+    category: "Creative systems · 2024—26",
+    client: "Angara Ecommerce",
     title: "Making good ideas move faster",
-    company: "Angara Ecommerce",
     description:
-      "A practical AI-augmented creative workflow for turning early concepts into high-quality campaign assets while keeping every output on-brand and business-ready.",
-    tags: ["AI workflows", "Art direction", "Systems"],
-    accent: "peach",
+      "An AI-augmented creative workflow for turning early concepts into polished campaign assets without losing the human point of view.",
+    tags: ["AI workflows", "Systems"],
+    tone: "lime",
+    size: "small",
   },
   {
     number: "03",
-    type: "Visual design / campaigns",
+    category: "Visual design · 2018—20",
+    client: "Crystaltech Esolutions",
     title: "Design that earns attention",
-    company: "Crystaltech Esolutions",
     description:
-      "Targeted social graphics, landing pages, and seasonal campaign systems designed to give digital engagement a stronger visual point of view.",
-    tags: ["Visual design", "E-commerce", "Campaigns"],
-    accent: "lavender",
+      "Social campaigns, e-commerce landing pages, and seasonal systems with a stronger visual point of view.",
+    tags: ["Visual design", "Campaigns"],
+    tone: "lavender",
+    size: "small",
   },
 ];
 
 const experience = [
   {
-    year: "2024 — 2026",
+    date: "2024—26",
     role: "Creative Designer",
     company: "Angara Ecommerce",
-    copy: "Spearheaded AI-augmented creative workflows, blending strong design fundamentals with generative tools to accelerate ideation and concept visualization. Built repeatable pipelines for high-quality, on-brand asset production.",
+    copy: "Spearheaded AI-augmented creative workflows, blending design fundamentals with generative tools to accelerate ideation, concept visualization, and high-quality asset production.",
   },
   {
-    year: "2020 — 2024",
+    date: "2020—24",
     role: "Product Designer",
     company: "Shop LC",
-    copy: "Partnered with developers, stakeholders, and conversion teams to shape high-converting promotional experiences across web and mobile. Led UX/UI overhauls, structured A/B testing, and accessible interface design aligned with ADA and WCAG standards.",
+    copy: "Partnered with developers, stakeholders, and conversion teams to shape promotional experiences across web and mobile. Led UX/UI overhauls, A/B testing, and accessible interface design aligned with ADA and WCAG standards.",
   },
   {
-    year: "2018 — 2020",
+    date: "2018—20",
     role: "Graphic Designer",
     company: "Crystaltech Esolutions",
     copy: "Designed social campaigns, e-commerce landing pages, and seasonal promotional systems that helped brands communicate with more consistency across digital touchpoints.",
   },
   {
-    year: "2014 — 2018",
+    date: "2014—18",
     role: "Senior Client Relationship Manager",
     company: "Travel & Visa Services",
     copy: "Managed visa processing across Dubai and Schengen countries, balancing detailed documentation, client relationships, and competitive travel coordination.",
@@ -77,232 +87,164 @@ const skills = [
   "Wireframing",
   "Prototyping",
   "User testing",
-  "Data analysis",
-  "Motion design",
   "Design systems",
   "Design thinking",
   "Sprint planning",
   "Ideation",
+  "Data analysis",
+  "Motion design",
 ];
 
-const tools = [
-  "Figma",
-  "Adobe Photoshop",
-  "Sketch",
-  "Illustrator",
-  "InDesign",
-  "Premiere Rush",
-  "Lightroom",
-  "Framer",
-];
+const tools = ["Figma", "Photoshop", "Sketch", "Illustrator", "InDesign", "Framer", "Uizard", "Relume", "Cursor", "Claude"];
 
-const aiTools = [
-  "Uizard",
-  "Emergent",
-  "Galileo AI",
-  "Relume",
-  "Davis & Devin AI",
-  "Cursor",
-  "Magnific",
-  "Claude",
-];
-
-function SectionLabel({ index, children }: { index: string; children: string }) {
+function SectionIntro({ number, eyebrow, title, copy }: { number: string; eyebrow: string; title: React.ReactNode; copy: string }) {
   return (
-    <div className="section-label">
-      <span className="section-label__index">{index}</span>
-      <span>{children}</span>
+    <div className="section-intro">
+      <div className="section-kicker"><span>{number}</span><span>{eyebrow}</span></div>
+      <h2>{title}</h2>
+      <p>{copy}</p>
     </div>
   );
 }
 
-function WindowBar({ index, label }: { index: string; label: string }) {
+function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <div className="window-bar">
-      <div className="window-dots" aria-hidden="true">
-        <span />
-        <span />
-        <span />
+    <article className={`project-card project-card--${project.size} project-card--${project.tone}`}>
+      <div className="project-card__header">
+        <span>{project.number}</span>
+        <span>{project.category}</span>
       </div>
-      <span className="window-bar__label">{index} / {label}</span>
-      <span className="window-bar__status">Available for select projects</span>
-    </div>
+      <div className="project-card__art" aria-hidden="true">
+        <div className="art-grid" />
+        <div className="art-panel">
+          <div className="art-panel__top"><i /><i /><i /></div>
+          <div className="art-panel__content">
+            <span className="art-label">{project.client}</span>
+            <b>{project.number === "01" ? "Shop with confidence" : project.number === "02" ? "A faster first draft" : "Make it memorable"}</b>
+            <span className="art-bar art-bar--wide" /><span className="art-bar" /><span className="art-bar art-bar--short" />
+            <div className="art-button">Explore <ArrowUpRight size={11} /></div>
+          </div>
+        </div>
+        <span className="art-stamp">{project.number}</span>
+      </div>
+      <div className="project-card__body">
+        <p className="project-card__client">{project.client}</p>
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+        <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+      </div>
+    </article>
   );
 }
 
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const closeMenu = () => setMenuOpen(false);
 
   return (
     <main className="site-shell">
       <header className="site-header">
         <Link to="/" className="brand-mark" aria-label="Pushpender Sharma home">
-          <span>PS</span>
+          <span className="brand-mark__symbol">P</span>
+          <span className="brand-mark__name">Pushpender Sharma</span>
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           <Link to="/#work">Work</Link>
-          <Link to="/#experience">Experience</Link>
           <Link to="/#about">About</Link>
-          <a className="nav-resume" href="https://drive.google.com/file/d/1__8G6ZHDYltuZUdplqrhPwu8yfFoEAL1/view?usp=sharing" target="_blank" rel="noreferrer">
-            Resume <ArrowUpRight size={13} strokeWidth={2.5} />
-          </a>
+          <Link to="/#experience">Experience</Link>
+          <a className="nav-resume" href={resumeUrl} target="_blank" rel="noreferrer">Resume <ArrowUpRight size={14} /></a>
         </nav>
-        <button
-          className="menu-toggle"
-          type="button"
-          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          {menuOpen ? <X size={20} /> : <Menu size={20} />}
+        <button className="menu-toggle" type="button" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
         {menuOpen && (
           <nav className="mobile-nav" aria-label="Mobile navigation">
-            <Link to="/#work" onClick={closeMenu}>Work <ArrowUpRight size={15} /></Link>
-            <Link to="/#experience" onClick={closeMenu}>Experience <ArrowUpRight size={15} /></Link>
-            <Link to="/#about" onClick={closeMenu}>About <ArrowUpRight size={15} /></Link>
-            <a href="https://drive.google.com/file/d/1__8G6ZHDYltuZUdplqrhPwu8yfFoEAL1/view?usp=sharing" target="_blank" rel="noreferrer" onClick={closeMenu}>Resume <ArrowUpRight size={15} /></a>
+            <Link to="/#work" onClick={closeMenu}>Work <ArrowUpRight size={17} /></Link>
+            <Link to="/#about" onClick={closeMenu}>About <ArrowUpRight size={17} /></Link>
+            <Link to="/#experience" onClick={closeMenu}>Experience <ArrowUpRight size={17} /></Link>
+            <a href={resumeUrl} target="_blank" rel="noreferrer" onClick={closeMenu}>Resume <ArrowUpRight size={17} /></a>
           </nav>
         )}
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero__eyebrow">Pushpender Sharma <span>·</span> UX Designer</div>
-        <h1 id="hero-title">
-          Designing <em>intuitive</em>
-          <br className="hero-break" /> digital products
-        </h1>
-        <p className="hero__intro">
-          User-centered product designer and UX strategist with 6+ years of experience turning complex journeys into clear, high-converting digital experiences.
-        </p>
-        <div className="hero__actions">
-          <Link className="button button--dark" to="/#work">View my work <ArrowDownRight size={16} /></Link>
-          <a className="button button--outline" href="https://drive.google.com/file/d/1__8G6ZHDYltuZUdplqrhPwu8yfFoEAL1/view?usp=sharing" target="_blank" rel="noreferrer">Download resume <Download size={15} /></a>
-        </div>
-        <div className="hero__rule" aria-hidden="true" />
-        <div className="hero__side-note">Scroll to explore <ArrowDownRight size={15} /></div>
-      </section>
-
-      <section className="marquee-strip" aria-label="Areas of practice">
-        <div>UX strategy <span>✳</span> product design <span>✳</span> creative systems <span>✳</span> accessible by default <span>✳</span> UX strategy <span>✳</span></div>
-      </section>
-
-      <section className="page-section work-section" id="work">
-        <div className="section-heading-row">
-          <div>
-            <SectionLabel index="01" >Selected work</SectionLabel>
-            <h2>Thoughtful design,<br /><span>useful outcomes.</span></h2>
+        <div className="hero__orb hero__orb--one" aria-hidden="true" />
+        <div className="hero__orb hero__orb--two" aria-hidden="true" />
+        <div className="hero__content">
+          <p className="eyebrow"><span className="eyebrow__dot" /> Product designer · UX strategist · AI explorer</p>
+          <h1 id="hero-title">Good products feel <em>obvious.</em></h1>
+          <p className="hero__summary">I’m Pushpender Sharma, a user-centered product designer who turns complex journeys into clear, useful digital experiences.</p>
+          <div className="hero__actions">
+            <Link className="button button--primary" to="/#work">Explore selected work <ArrowDownRight size={17} /></Link>
+            <a className="text-link" href={resumeUrl} target="_blank" rel="noreferrer">Open résumé <ArrowUpRight size={16} /></a>
           </div>
-          <p className="section-heading-row__note">A few chapters from a career spent making digital experiences feel simpler, sharper, and more human.</p>
         </div>
-        <div className="work-grid">
-          {workItems.map((item) => (
-            <article className={`work-card work-card--${item.accent}`} key={item.number}>
-              <div className="work-card__topline">
-                <span>{item.number}</span>
-                <span>{item.type}</span>
-              </div>
-              <div className="work-card__visual" aria-hidden="true">
-                <div className="visual-orbit visual-orbit--one" />
-                <div className="visual-orbit visual-orbit--two" />
-                <div className="visual-window">
-                  <div className="visual-window__top"><span /><span /><span /></div>
-                  <div className="visual-window__body">
-                    <div className="visual-line visual-line--short" />
-                    <div className="visual-line" />
-                    <div className="visual-line visual-line--tiny" />
-                    <div className="visual-block" />
-                  </div>
-                </div>
-                <span className="visual-number">{item.number}</span>
-              </div>
-              <div className="work-card__content">
-                <p className="work-card__company">{item.company}</p>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <div className="tag-list">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-              </div>
-            </article>
-          ))}
+        <div className="hero__meta" aria-label="Professional summary">
+          <span>Based in India</span><span>Available for select projects</span><span>6+ years shaping digital products</span>
         </div>
+        <div className="hero__scroll" aria-hidden="true"><span>Scroll to explore</span><ArrowDownRight size={16} /></div>
       </section>
 
-      <section className="page-section about-section" id="about">
-        <WindowBar index="02" label="About me" />
-        <div className="about-grid">
-          <div className="about-intro">
-            <SectionLabel index="02" >A little context</SectionLabel>
-            <h2>Design is how I make room for <span>better decisions.</span></h2>
-            <p>I’m a product designer who enjoys the space between a messy problem and a clear next step. My work brings together research, visual craft, and a healthy respect for the details that make an experience feel effortless.</p>
-            <p>More recently, I’ve been exploring generative AI as a creative partner — not to replace taste or empathy, but to give good ideas more room to grow.</p>
+      <section className="proof-strip" aria-label="Capabilities">
+        <div><strong>6+</strong><span>years of experience</span></div>
+        <div><strong>Web + mobile</strong><span>product thinking</span></div>
+        <div><strong>AI-assisted</strong><span>creative workflows</span></div>
+        <div><strong>WCAG-minded</strong><span>accessible by default</span></div>
+      </section>
+
+      <section className="content-section work-section" id="work">
+        <SectionIntro number="01" eyebrow="Selected work" title={<>From messy problem<br /><span>to meaningful product.</span></>} copy="A focused selection of projects across product design, e-commerce, creative systems, and visual communication." />
+        <div className="project-grid">{projects.map((project) => <ProjectCard project={project} key={project.number} />)}</div>
+      </section>
+
+      <section className="content-section about-section" id="about">
+        <div className="about__visual" aria-hidden="true">
+          <div className="about__visual-card">
+            <span className="about__visual-index">02 / approach</span>
+            <div className="about__visual-icon"><MousePointer2 size={31} /></div>
+            <p>Make the<br /><strong>next step</strong><br />feel natural.</p>
+            <span className="about__visual-line" />
           </div>
-          <div className="about-note">
-            <div className="about-note__symbol"><Sparkles size={23} /></div>
-            <p>“The best interfaces don’t ask for attention. They earn trust.”</p>
-            <span>— working principle</span>
+        </div>
+        <div className="about__copy">
+          <div className="section-kicker"><span>02</span><span>About me</span></div>
+          <h2>Empathy is a<br /><span>design tool.</span></h2>
+          <p>I work in the space between a messy problem and a clear next step. My process combines research, visual craft, and the details that make an experience feel effortless.</p>
+          <p>Recently, I’ve been exploring generative AI as a creative partner—not a replacement for taste or empathy, but a way to give good ideas more room to grow.</p>
+          <div className="principles">
+            <div><Layers3 size={18} /><span>Structure before polish</span></div>
+            <div><ScanLine size={18} /><span>Clarity over decoration</span></div>
+            <div><Sparkles size={18} /><span>Curiosity in every iteration</span></div>
           </div>
         </div>
       </section>
 
-      <section className="page-section experience-section" id="experience">
-        <div className="section-heading-row section-heading-row--experience">
-          <div>
-            <SectionLabel index="03" >Experience</SectionLabel>
-            <h2>A practice built<br /><span>over time.</span></h2>
-          </div>
-          <p className="section-heading-row__note">Six-plus years of moving between product thinking, visual design, and the teams that bring ideas to life.</p>
-        </div>
+      <section className="content-section experience-section" id="experience">
+        <SectionIntro number="03" eyebrow="Experience" title={<>A practice built<br /><span>over time.</span></>} copy="Moving between product thinking, visual design, and the teams that bring ideas to life." />
         <div className="experience-list">
           {experience.map((item, index) => (
-            <article className="experience-item" key={item.company}>
-              <div className="experience-item__year">{item.year}</div>
+            <article className="experience-item" key={`${item.company}-${item.date}`}>
               <div className="experience-item__number">0{index + 1}</div>
-              <div className="experience-item__body">
-                <h3>{item.role}</h3>
-                <p className="experience-item__company">{item.company}</p>
-                <p>{item.copy}</p>
-              </div>
-              <ArrowUpRight className="experience-item__arrow" size={21} />
+              <div className="experience-item__date">{item.date}</div>
+              <div className="experience-item__content"><h3>{item.role}</h3><p className="experience-item__company">{item.company}</p><p>{item.copy}</p></div>
+              <ArrowUpRight className="experience-item__arrow" size={20} />
             </article>
           ))}
         </div>
       </section>
 
-      <section className="page-section toolkit-section">
-        <div className="toolkit-intro">
-          <SectionLabel index="04" >Toolkit</SectionLabel>
-          <h2>Curious by nature.<br /><span>Practical by design.</span></h2>
-          <p>The methods and tools I reach for when the right answer is still taking shape.</p>
-        </div>
-        <div className="toolkit-columns">
-          <div className="toolkit-column">
-            <h3>Skills <span>({skills.length})</span></h3>
-            <div className="pill-grid">{skills.map((skill) => <span key={skill}><Check size={12} />{skill}</span>)}</div>
-          </div>
-          <div className="toolkit-column">
-            <h3>Software</h3>
-            <div className="pill-grid pill-grid--light">{tools.map((tool) => <span key={tool}>{tool}</span>)}</div>
-            <h3 className="toolkit-subheading">AI tools</h3>
-            <div className="pill-grid pill-grid--coral">{aiTools.map((tool) => <span key={tool}>{tool}</span>)}</div>
-          </div>
+      <section className="content-section toolkit-section" aria-labelledby="toolkit-title">
+        <div className="toolkit__heading"><div className="section-kicker"><span>04</span><span>Toolkit</span></div><h2 id="toolkit-title">The tools are<br /><span>only half of it.</span></h2><p>The other half is knowing what to ask, what to test, and what to leave out.</p></div>
+        <div className="toolkit__content">
+          <div className="toolkit__group"><h3>What I do</h3><div className="skill-list">{skills.map((skill) => <span key={skill}><Check size={14} />{skill}</span>)}</div></div>
+          <div className="toolkit__group"><h3>What I use</h3><div className="tool-list">{tools.map((tool) => <span key={tool}>{tool}</span>)}</div></div>
         </div>
       </section>
 
-      <section className="resume-cta" id="resume">
-        <div className="resume-cta__top">
-          <SectionLabel index="05" >Let’s work together</SectionLabel>
-          <span className="resume-cta__available"><i /> Open to thoughtful collaborations</span>
-        </div>
-        <h2>Have a good problem<br />to solve?</h2>
-        <p>For a closer look at my experience, process, and the work behind the work, take a look at my resume.</p>
-        <a className="button button--light" href="https://drive.google.com/file/d/1__8G6ZHDYltuZUdplqrhPwu8yfFoEAL1/view?usp=sharing" target="_blank" rel="noreferrer">View my resume <ArrowUpRight size={16} /></a>
-        <div className="resume-cta__footer">
-          <span>Pushpender Sharma · UX Designer</span>
-          <a href="mailto:pushpender.sharmaoffical@outlook.com">pushpender.sharmaoffical@outlook.com</a>
-          <span>© {new Date().getFullYear()}</span>
-        </div>
+      <section className="contact-section" id="contact">
+        <div className="contact-section__top"><div className="section-kicker section-kicker--light"><span>05</span><span>Next step</span></div><span className="contact-status"><i /> Open to thoughtful collaborations</span></div>
+        <div className="contact-section__content"><h2>Have a good<br /><em>problem to solve?</em></h2><div><p>Let’s make the next step feel obvious. For a closer look at my experience and process, start with my résumé.</p><a className="button button--light" href={resumeUrl} target="_blank" rel="noreferrer">View my résumé <ArrowUpRight size={17} /></a></div></div>
+        <div className="contact-section__footer"><a href="mailto:pushpender.sharmaoffical@outlook.com"><Mail size={15} /> pushpender.sharmaoffical@outlook.com</a><span>Pushpender Sharma · UX Designer</span><span>© {new Date().getFullYear()}</span></div>
       </section>
     </main>
   );
