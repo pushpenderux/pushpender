@@ -244,19 +244,6 @@ export default function Index() {
             <span>— working principle</span>
           </div>
         </div>
-        <div className="system-panel">
-          <div className="system-panel__intro">
-            <SectionLabel index="↳" >The system</SectionLabel>
-            <p>A warm, direct visual language built to keep the work in focus.</p>
-          </div>
-          <div className="system-panel__swatches">
-            <div><span className="swatch swatch--ink" /><small>Deep ink</small><code>#122622</code></div>
-            <div><span className="swatch swatch--paper" /><small>Warm paper</small><code>#F6F6F0</code></div>
-            <div><span className="swatch swatch--coral" /><small>Soft coral</small><code>#EE8289</code></div>
-            <div><span className="swatch swatch--mint" /><small>Quiet mint</small><code>#E1EFE6</code></div>
-          </div>
-          <div className="system-panel__type"><span className="type-sample">Aa</span><div><strong>DM Sans</strong><small>Clear, conversational, grounded</small></div><span className="type-weight">400 / 600 / 800</span></div>
-        </div>
       </section>
 
       <section className="page-section experience-section" id="experience">
