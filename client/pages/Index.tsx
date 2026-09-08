@@ -30,7 +30,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       <div className="project-card__art" aria-hidden="true">
         {project.image ? <img className="project-card__image" src={project.image} alt="" /> : <><div className="art-grid" /><div className="art-panel"><div className="art-panel__top"><i /><i /><i /></div><div className="art-panel__content"><span className="art-label">{project.client}</span><b>{project.feature}</b><span className="art-bar art-bar--wide" /><span className="art-bar" /><span className="art-bar art-bar--short" /><div className="art-button">View project</div></div></div><span className="art-stamp">{project.number}</span></>}
       </div>
-      <div className="project-card__body"><p className="project-card__client">{project.client}</p><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><span className="project-card__link">View case study</span></div>
+      <div className="project-card__body"><p className="project-card__client">{project.number === "01" ? "Women's fashion" : project.client}</p><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><span className="project-card__link">View case study</span></div>
     </Link>
   );
 }
