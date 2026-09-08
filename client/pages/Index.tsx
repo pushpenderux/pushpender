@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Check, Layers3, MousePointer2, ScanLine, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 import { PortfolioFooter, PortfolioHeader } from "@/components/PortfolioChrome";
 import { projects, resumeUrl } from "@/lib/portfolio";
 
@@ -54,8 +54,6 @@ export default function Index() {
       <section className="proof-strip" aria-label="Capabilities"><div><strong>Six plus</strong><span>years of experience</span></div><div><strong>Web and mobile</strong><span>product thinking</span></div><div><strong>AI-assisted</strong><span>creative workflows</span></div><div><strong>WCAG-minded</strong><span>accessible by default</span></div></section>
 
       <section className="content-section work-section" id="work"><SectionIntro number="01" eyebrow="Work" title={<>From messy problem<br /><span>to meaningful product.</span></>} copy="Selected projects across product design, e-commerce, creative systems, and visual communication." /><div className="project-grid">{projects.map((project, index) => <ProjectCard project={{ ...project, size: index === 0 ? "large" : "small" }} key={project.slug} />)}</div></section>
-
-      <section className="content-section about-section" id="about"><div className="about__visual" aria-hidden="true"><div className="about__visual-card"><span className="about__visual-index">Approach</span><div className="about__visual-icon"><MousePointer2 size={31} /></div><p>Make the<br /><strong>next step</strong><br />feel natural.</p><span className="about__visual-line" /></div></div><div className="about__copy"><div className="section-kicker"><span>02</span><span>About me</span></div><h2>Empathy is a<br /><span>design tool.</span></h2><p>I work in the space between a messy problem and a clear next step. My process combines research, visual craft, and the details that make an experience feel effortless.</p><p>Recently, I have been exploring generative AI as a creative partner, not a replacement for taste or empathy, but a way to give good ideas more room to grow.</p><div className="principles"><div><Layers3 size={18} /><span>Structure before polish</span></div><div><ScanLine size={18} /><span>Clarity over decoration</span></div><div><Sparkles size={18} /><span>Curiosity in every iteration</span></div></div></div></section>
 
       <section className="content-section experience-section" id="experience"><SectionIntro number="03" eyebrow="Experience" title={<>A practice built<br /><span>over time.</span></>} copy="Moving between product thinking, visual design, and the teams that bring ideas to life." /><div className="experience-list">{experience.map((item, index) => <article className="experience-item" key={`${item.company}-${item.date}`}><div className="experience-item__number">0{index + 1}</div><div className="experience-item__date">{item.date}</div><div className="experience-item__content"><h3>{item.role}</h3><p className="experience-item__company">{item.company}</p><p>{item.copy}</p></div></article>)}</div></section>
 

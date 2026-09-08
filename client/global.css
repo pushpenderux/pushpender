@@ -193,9 +193,9 @@
   .contact-section__content > div { padding-bottom: 4px; }
   .contact-section__content p { color: rgba(255,255,255,.78); font-size: 16px; line-height: 1.7; margin: 0 0 22px; }
   .contact-section__actions { display: flex; flex-wrap: wrap; gap: 10px; }
-  .contact-section__footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; border-top: 1px solid rgba(255,255,255,.26); padding-top: 16px; color: rgba(255,255,255,.68); font-size: 11px; position: relative; z-index: 1; }
-  .contact-section__footer a { display: inline-flex; align-items: center; gap: 7px; color: white; text-decoration: none; }
-  .contact-section__footer a:hover { color: var(--lime); }
+  .site-footer { display: grid; grid-template-columns: repeat(3, auto) 1fr auto auto; align-items: center; gap: 15px; border-top: 1px solid rgba(255,255,255,.26); padding-top: 16px; color: rgba(255,255,255,.68); font-size: 11px; position: relative; z-index: 1; }
+  .site-footer a { display: inline-flex; align-items: center; gap: 7px; color: white; text-decoration: none; }
+  .site-footer a:hover { color: var(--lime); }
   .social-link__icon { width: 26px; height: 26px; display: inline-grid; place-items: center; border: 1px solid currentColor; border-radius: 7px; font-size: 10px; font-weight: 700; letter-spacing: -.04em; }
 
   .case-study { width: min(1120px, calc(100% - 48px)); margin: 0 auto; padding: 35px 0 125px; }
@@ -233,7 +233,41 @@
   .case-study__contact { width: min(1120px, calc(100% - 48px)); margin: 0 auto 24px; display: flex; align-items: end; justify-content: space-between; gap: 30px; border-radius: 20px; background: var(--blue); color: white; padding: 44px 50px; }
   .case-study__contact .section-kicker { margin: 0 0 14px; }
   .case-study__contact h2 { color: white; font-size: clamp(32px, 4.5vw, 58px); line-height: 1; letter-spacing: -.06em; margin: 0; }
-  .case-study-shell > .contact-section__footer { width: min(1120px, calc(100% - 48px)); margin: 0 auto 24px; border-radius: 16px; background: var(--ink); padding: 22px 28px; }
+  .case-study-shell > .site-footer, .about-page > .site-footer { width: min(1120px, calc(100% - 48px)); margin: 0 auto 24px; border-radius: 16px; background: var(--ink); padding: 22px 28px; }
+
+  .about-page { background: #edf1ff; }
+  .about-hero { width: min(1240px, calc(100% - 48px)); margin: 0 auto; display: grid; grid-template-columns: .82fr 1.18fr; gap: 78px; align-items: center; padding: 44px 0 105px; }
+  .about-profile img { display: block; width: 100%; aspect-ratio: .96; object-fit: cover; object-position: left center; border-radius: 2px; }
+  .about-profile p { color: var(--muted-text); font-size: 12px; text-align: center; margin: 14px 0 0; }
+  .about-introduction { max-width: 610px; }
+  .about-eyebrow { color: var(--blue); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 13px; }
+  .about-introduction h1 { color: var(--ink); font-size: clamp(38px, 5.2vw, 67px); line-height: .98; letter-spacing: -.07em; margin: 0 0 25px; }
+  .about-introduction > p:not(.about-eyebrow) { color: var(--muted-text); font-size: 15px; line-height: 1.72; margin: 0 0 14px; }
+  .about-introduction strong { color: var(--ink); font-weight: 700; }
+  .about-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .button--secondary { border: 1px solid var(--line); color: var(--ink); background: white; }
+  .button--secondary:hover { border-color: var(--blue); background: var(--lavender); }
+  .about-capabilities { width: min(1240px, calc(100% - 48px)); margin: 0 auto; padding: 0 0 115px; }
+  .about-section-heading { margin-bottom: 34px; }
+  .about-section-heading h2 { max-width: 700px; color: var(--ink); font-size: clamp(34px, 4.7vw, 59px); line-height: 1; letter-spacing: -.065em; margin: 0; }
+  .capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .capability-card { min-width: 0; }
+  .capability-card__image { height: 210px; overflow: hidden; background: white; border-radius: 2px; }
+  .capability-card__image img { width: 100%; height: 100%; object-fit: cover; }
+  .capability-card__image--left img { object-position: left center; }
+  .capability-card__image--center img { object-position: center center; }
+  .capability-card__image--right img { object-position: right center; }
+  .capability-card h3 { color: var(--ink); font-size: 25px; letter-spacing: -.045em; margin: 17px 0 9px; }
+  .capability-card p { color: var(--muted-text); font-size: 14px; line-height: 1.65; margin: 0; }
+  .about-personal { width: min(1240px, calc(100% - 48px)); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 75px; align-items: center; padding: 30px 0 120px; }
+  .about-personal h2 { max-width: 490px; color: var(--ink); font-size: clamp(37px, 4.8vw, 61px); line-height: 1; letter-spacing: -.07em; margin: 0 0 22px; }
+  .about-personal__intro { max-width: 490px; color: var(--muted-text); font-size: 16px; line-height: 1.7; font-style: italic; margin: 0 0 25px; }
+  .about-list { display: grid; gap: 11px; }
+  .about-list p { border-left: 3px solid var(--blue); color: var(--ink); font-size: 14px; line-height: 1.55; padding-left: 13px; margin: 0; }
+  .about-personal img { width: 100%; aspect-ratio: 1.34; object-fit: cover; object-position: center center; border-radius: 2px; }
+  .about-cta { width: min(1240px, calc(100% - 48px)); margin: 0 auto 26px; display: flex; align-items: center; justify-content: space-between; gap: 30px; border-radius: 16px; background: var(--blue); color: white; padding: 35px 42px; }
+  .about-cta .about-eyebrow { color: var(--lime); margin-bottom: 8px; }
+  .about-cta h2 { color: white; font-size: clamp(35px, 4.8vw, 61px); line-height: 1; letter-spacing: -.07em; margin: 0; }
 }
 
 :root { --ink: #121a33; --paper: #f7f8ff; --surface: #ffffff; --blue: #3559e0; --blue-dark: #2541b0; --lime: #d8f45f; --lime-dark: #8c9d20; --lavender: #e9e6ff; --line: #d7dced; --muted-text: #53607b; --success: #167b5b; --warning: #a15c00; --error: #c73030; }
@@ -275,7 +309,18 @@
   .case-study__body aside { display: grid; grid-template-columns: 1fr 1.5fr; gap: 6px 18px; }
   .case-study__body aside strong { margin: 0 0 17px; }
   .case-study__contact { width: min(100% - 36px, 680px); padding: 35px 28px; }
-  .case-study-shell > .contact-section__footer { width: min(100% - 36px, 680px); }
+  .case-study-shell > .site-footer, .about-page > .site-footer { width: min(100% - 36px, 680px); }
+  .about-hero, .about-capabilities, .about-personal, .about-cta { width: min(100% - 36px, 680px); }
+  .about-hero { grid-template-columns: 1fr; gap: 38px; padding-top: 25px; }
+  .about-profile { max-width: 520px; }
+  .about-profile img { aspect-ratio: 1.04; }
+  .about-introduction h1 { font-size: 52px; }
+  .capability-grid { grid-template-columns: 1fr; gap: 39px; }
+  .capability-card__image { height: 220px; }
+  .about-personal { grid-template-columns: 1fr; gap: 37px; padding-bottom: 90px; }
+  .about-personal img { order: -1; }
+  .about-cta { display: block; padding: 30px 26px; }
+  .about-cta .button { margin-top: 24px; }
 }
 
 @media (max-width: 520px) {
@@ -311,9 +356,9 @@
   .contact-section__top { align-items: flex-start; }
   .contact-status { max-width: 135px; text-align: right; line-height: 1.4; }
   .contact-section h2 { font-size: clamp(57px, 16vw, 83px); }
-  .contact-section__footer { display: grid; grid-template-columns: 1fr 1fr; font-size: 10px; }
-  .contact-section__footer a { grid-column: 1 / -1; }
-  .contact-section__footer span:last-child { justify-self: end; }
+  .site-footer { display: grid; grid-template-columns: 1fr 1fr; font-size: 10px; }
+  .site-footer a { grid-column: 1 / -1; }
+  .site-footer span:last-child { justify-self: end; }
   .case-study { width: min(100% - 36px, 680px); padding-top: 25px; }
   .case-study__back { margin-bottom: 38px; }
   .case-study__hero h1 { font-size: 57px; }
@@ -325,8 +370,8 @@
   .case-study__copy p { font-size: 16px; margin-bottom: 34px; }
   .case-study__contact { display: block; }
   .case-study__contact .button { margin-top: 25px; }
-  .case-study-shell > .contact-section__footer { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; }
-  .case-study-shell > .contact-section__footer a:nth-child(4) { grid-column: 1 / -1; }
+  .case-study-shell > .site-footer { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; }
+  .case-study-shell > .site-footer a:nth-child(4) { grid-column: 1 / -1; }
 }
 
 @media (prefers-reduced-motion: reduce) {

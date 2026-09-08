@@ -1,4 +1,4 @@
-export const resumeUrl = "https://drive.google.com/drive/folders/1h7oU7hN-NM4L60W2YLsIi19tlULZEre7";
+export const resumeUrl = "https://drive.google.com/file/d/1__8G6ZHDYltuZUdplqrhPwu8yfFoEAL1/view";
 
 export const projects = [
   {
