@@ -23,17 +23,12 @@ function SectionIntro({ number, eyebrow, title, copy }: { number: string; eyebro
   );
 }
 
-function ProjectCard({ project }: { project: (typeof projects)[number] & { size?: "large" | "small" } }) {
+function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <Link to={`/work/${project.slug}`} className={`project-card project-card--${project.size ?? "small"} project-card--${project.tone}`} aria-label={`View ${project.client} case study`}>
+    <Link to={`/work/${project.slug}`} className={`project-card project-card--small project-card--${project.tone}`} aria-label={`View ${project.client} case study`}>
       <div className="project-card__header"><span>{project.number}</span><span>{project.category} for {project.period}</span></div>
       <div className="project-card__art" aria-hidden="true">
-        <div className="art-grid" />
-        <div className="art-panel">
-          <div className="art-panel__top"><i /><i /><i /></div>
-          <div className="art-panel__content"><span className="art-label">{project.client}</span><b>{project.feature}</b><span className="art-bar art-bar--wide" /><span className="art-bar" /><span className="art-bar art-bar--short" /><div className="art-button">View project</div></div>
-        </div>
-        <span className="art-stamp">{project.number}</span>
+        {project.image ? <img className="project-card__image" src={project.image} alt="" /> : <><div className="art-grid" /><div className="art-panel"><div className="art-panel__top"><i /><i /><i /></div><div className="art-panel__content"><span className="art-label">{project.client}</span><b>{project.feature}</b><span className="art-bar art-bar--wide" /><span className="art-bar" /><span className="art-bar art-bar--short" /><div className="art-button">View project</div></div></div><span className="art-stamp">{project.number}</span></>}
       </div>
       <div className="project-card__body"><p className="project-card__client">{project.client}</p><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><span className="project-card__link">View case study</span></div>
     </Link>
@@ -53,7 +48,7 @@ export default function Index() {
 
       <section className="proof-strip" aria-label="Capabilities"><div><strong>Six plus</strong><span>years of experience</span></div><div><strong>Web and mobile</strong><span>product thinking</span></div><div><strong>AI-assisted</strong><span>creative workflows</span></div><div><strong>WCAG-minded</strong><span>accessible by default</span></div></section>
 
-      <section className="content-section work-section" id="work"><SectionIntro number="01" eyebrow="Work" title={<>From messy problem<br /><span>to meaningful product.</span></>} copy="Selected projects across product design, e-commerce, creative systems, and visual communication." /><div className="project-grid">{projects.map((project, index) => <ProjectCard project={{ ...project, size: index === 0 ? "large" : "small" }} key={project.slug} />)}</div></section>
+      <section className="content-section work-section" id="work"><SectionIntro number="01" eyebrow="Work" title={<>From messy problem<br /><span>to meaningful product.</span></>} copy="Selected projects across product design, e-commerce, creative systems, and visual communication." /><div className="project-grid">{projects.map((project) => <ProjectCard project={project} key={project.slug} />)}</div></section>
 
       <section className="content-section experience-section" id="experience"><SectionIntro number="03" eyebrow="Experience" title={<>A practice built<br /><span>over time.</span></>} copy="Moving between product thinking, visual design, and the teams that bring ideas to life." /><div className="experience-list">{experience.map((item, index) => <article className="experience-item" key={`${item.company}-${item.date}`}><div className="experience-item__number">0{index + 1}</div><div className="experience-item__date">{item.date}</div><div className="experience-item__content"><h3>{item.role}</h3><p className="experience-item__company">{item.company}</p><p>{item.copy}</p></div></article>)}</div></section>
 
