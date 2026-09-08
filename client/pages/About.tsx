@@ -2,21 +2,16 @@ import { Link } from "react-router-dom";
 import { PortfolioFooter, PortfolioHeader } from "@/components/PortfolioChrome";
 import { resumeUrl } from "@/lib/portfolio";
 
-const profileImage = "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F5f079cb9a117455292c0869057286373?format=webp&width=800&height=1200";
-const skillsReference = "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2Fc1096535ed674af3bf965e48c31c99d3?format=webp&width=800&height=1200";
-const outdoorsReference = "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F4cfb6f16187249ee82d098294d40e5ea?format=webp&width=800&height=1200";
-
-const strengths = [
-  "Great experience across mobile, web, e-commerce, and digital products.",
-  "Skilled in user research, information architecture, user flows, wireframing, prototyping, interaction design, and UI design.",
-  "Strong cross-functional collaboration with product, engineering, research, content, and business stakeholders.",
-  "Comfortable working across strategy and execution, from defining problems and exploring concepts to delivering production-ready designs.",
-];
+const profileImage = "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2Ffce18046efec458db80fca6f6542bef4?format=webp&width=800&height=1200";
+const uxResearchImage = "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F1872cfcfeb7140deb402c7b589e43156?format=webp&width=800&height=1200";
+const wireframingImage = "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F215026b63b134cf0a50b5532bf7f8ec1?format=webp&width=800&height=1200";
+const usabilityTestingImage = "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F0ac606715fc74c9f99570824a3cf250d?format=webp&width=800&height=1200";
+const outdoorsReference = "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2Fe89e96a406b44777a3ccc9e73d1a8528?format=webp&width=800&height=1200";
 
 const capabilities = [
-  { title: "UX Research", copy: "Conduct user research to understand target audiences, their needs, and their pain points.", position: "left" },
-  { title: "Wireframing", copy: "Develop detailed wireframes that outline the layout, structure, and key elements of each screen.", position: "center" },
-  { title: "Usability Testing", copy: "Conduct usability tests with target users to gather feedback on design and functionality.", position: "right" },
+  { title: "UX Research", copy: "Conduct user research to understand target audiences, their needs, and their pain points.", position: "left", image: uxResearchImage },
+  { title: "Wireframing", copy: "Develop detailed wireframes that outline the layout, structure, and key elements of each screen.", position: "center", image: wireframingImage },
+  { title: "Usability Testing", copy: "Conduct usability tests with target users to gather feedback on design and functionality.", position: "right", image: usabilityTestingImage },
 ];
 
 export default function About() {
@@ -26,7 +21,7 @@ export default function About() {
       <section className="about-hero" aria-labelledby="about-title">
         <div className="about-profile">
           <img src={profileImage} alt="Pushpender Sharma outdoors in a snowy mountain landscape" />
-          <p>Hi there, nice to meet you.</p>
+          <p className="about-profile__greeting">Hi there, nice to meet you.</p>
         </div>
         <div className="about-introduction">
           <p className="about-eyebrow">About me</p>
@@ -40,7 +35,7 @@ export default function About() {
 
       <section className="about-capabilities" aria-labelledby="capabilities-title">
         <div className="about-section-heading"><p className="about-eyebrow">How I work</p><h2 id="capabilities-title">From questions to confident decisions.</h2></div>
-        <div className="capability-grid">{capabilities.map((capability) => <article className="capability-card" key={capability.title}><div className={`capability-card__image capability-card__image--${capability.position}`}><img src={skillsReference} alt="Abstract interface design reference" /></div><h3>{capability.title}</h3><p>{capability.copy}</p></article>)}</div>
+        <div className="capability-grid">{capabilities.map((capability) => <article className="capability-card" key={capability.title}><div className={`capability-card__image capability-card__image--${capability.position}`}><img src={capability.image} alt={`${capability.title} project reference`} /></div><h3>{capability.title}</h3><p>{capability.copy}</p></article>)}</div>
       </section>
 
       <section className="about-personal" aria-labelledby="personal-title"><div><p className="about-eyebrow">Beyond the screen</p><h2 id="personal-title">What I do when I am not working</h2><p className="about-personal__intro">Beyond my computer screen, you will find me on outdoor adventures, playing sports, or enjoying coffee at a specialty cafe.</p><div className="about-list"> <p>Discovering unfamiliar places through outdoor adventures.</p><p>Playing football and table tennis.</p><p>Finding a quiet cafe for a good cup of coffee.</p></div></div><img src={outdoorsReference} alt="Pushpender Sharma on an outdoor mountain adventure" /></section>
