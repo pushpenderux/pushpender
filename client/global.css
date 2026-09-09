@@ -93,10 +93,20 @@
   .hero__meta { position: absolute; bottom: 25px; left: 50px; right: 50px; z-index: 2; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(53,89,224,.18); padding-top: 14px; color: var(--muted-text); font-size: 11px; font-weight: 600; }
   .hero__scroll { position: absolute; right: 19px; bottom: 50%; z-index: 2; transform: rotate(-90deg) translateX(50%); transform-origin: right bottom; display: flex; align-items: center; gap: 7px; color: var(--muted-text); font-size: 11px; font-weight: 600; }
 
-  .scroll-progress { position: fixed; top: 50%; right: 18px; z-index: 30; display: flex; flex-direction: column; align-items: center; gap: 8px; width: 28px; transform: translateY(-50%); pointer-events: none; }
-  .scroll-progress::before { content: ""; width: 2px; height: 148px; border-radius: 4px; background: var(--line); }
-  .scroll-progress__fill { position: absolute; top: 0; width: 2px; height: 148px; border-radius: 4px; background: var(--blue); transform-origin: top; }
-  .scroll-progress__label { color: var(--muted-text); font-family: "Space Grotesk", sans-serif; font-size: 10px; font-weight: 700; }
+  .scroll-progress { position: fixed; top: 50%; right: 16px; z-index: 30; display: flex; flex-direction: column; align-items: center; gap: 11px; width: 116px; transform: translateY(-50%); }
+  .scroll-progress__rail { position: relative; width: 100%; height: 170px; }
+  .scroll-progress__track { position: absolute; top: 0; right: 0; width: 28px; height: 170px; border: 1px solid rgba(53,89,224,.18); border-radius: 999px; background: rgba(255,255,255,.76); box-shadow: 0 7px 20px rgba(18,26,51,.08); cursor: ns-resize; touch-action: none; }
+  .scroll-progress__track::before { content: ""; position: absolute; top: 10px; bottom: 10px; left: 50%; width: 2px; border-radius: 4px; background: var(--line); transform: translateX(-50%); }
+  .scroll-progress__fill { position: absolute; top: 10px; left: 50%; width: 2px; height: calc(100% - 20px); border-radius: 4px; background: var(--blue); transform: translateX(-50%) scaleY(0); transform-origin: top; pointer-events: none; }
+  .scroll-progress__thumb { position: absolute; top: 0; left: 50%; width: 18px; height: 18px; border: 3px solid white; border-radius: 50%; background: var(--blue); box-shadow: 0 2px 8px rgba(53,89,224,.32); transform: translate(-50%, -50%); cursor: grab; transition: box-shadow 170ms ease, transform 170ms ease; }
+  .scroll-progress__thumb:active, .scroll-progress.is-dragging .scroll-progress__thumb { cursor: grabbing; transform: translate(-50%, -50%) scale(1.16); box-shadow: 0 3px 12px rgba(53,89,224,.4); }
+  .scroll-progress__steps { position: absolute; top: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; }
+  .scroll-progress__step { display: inline-flex; align-items: center; gap: 6px; border: 0; background: transparent; color: var(--muted-text); padding: 2px 0; font-family: "IBM Plex Sans", sans-serif; font-size: 10px; font-weight: 700; cursor: pointer; transition: color 170ms ease, transform 170ms ease; }
+  .scroll-progress__step:hover, .scroll-progress__step.is-active { color: var(--blue); transform: translateX(-2px); }
+  .scroll-progress__step-dot { width: 6px; height: 6px; border: 1px solid currentColor; border-radius: 50%; background: var(--paper); transition: background 170ms ease, transform 170ms ease; }
+  .scroll-progress__step.is-active .scroll-progress__step-dot { background: var(--lime); transform: scale(1.35); }
+  .scroll-progress__step-label { min-width: 47px; text-align: left; }
+  .scroll-progress__caption { color: var(--muted-text); font-size: 9px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
 
   .proof-strip { width: 100%; background: var(--ink); color: white; }
   .proof-strip__inner { width: min(1240px, calc(100% - 48px)); margin: 0 auto; display: grid; grid-template-columns: minmax(260px, .78fr) minmax(0, 1.5fr); gap: clamp(42px, 8vw, 105px); align-items: end; padding: 74px 0 78px; }
@@ -399,9 +409,12 @@
 }
 
 @media (max-width: 520px) {
-  .scroll-progress { right: 7px; }
-  .scroll-progress::before, .scroll-progress__fill { height: 105px; }
-  .scroll-progress__label { font-size: 9px; }
+  .scroll-progress { right: 4px; width: 36px; gap: 0; }
+  .scroll-progress__rail { height: 132px; }
+  .scroll-progress__track { width: 22px; height: 132px; }
+  .scroll-progress__steps { right: 0; left: 0; align-items: center; }
+  .scroll-progress__step { padding: 5px; }
+  .scroll-progress__step-label, .scroll-progress__caption { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

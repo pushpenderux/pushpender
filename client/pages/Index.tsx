@@ -56,8 +56,9 @@ function useScrollReveal() {
   }, []);
 }
 
-function ScrollProgress() {
+function ScrollProgress({ activeSection, onNavigate }: { activeSection: string; onNavigate: (target: string) => void }) {
   const [progress, setProgress] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     const updateProgress = () => {
@@ -74,13 +75,56 @@ function ScrollProgress() {
     };
   }, []);
 
-  const percentage = Math.round(progress * 100);
+  const scrollFromPointer = (clientY: number, element: HTMLDivElement) => {
+    const bounds = element.getBoundingClientRect();
+    const nextProgress = Math.min(1, Math.max(0, (clientY - bounds.top) / bounds.height));
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    window.scrollTo({ top: nextProgress * scrollableHeight, behavior: "auto" });
+  };
+
+  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    event.currentTarget.setPointerCapture(event.pointerId);
+    scrollFromPointer(event.clientY, event.currentTarget);
+  };
+
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (isDragging) scrollFromPointer(event.clientY, event.currentTarget);
+  };
+
+  const handlePointerUp = (event: React.PointerEvent<HTMLDivElement>) => {
+    setIsDragging(false);
+    event.currentTarget.releasePointerCapture(event.pointerId);
+  };
 
   return (
-    <div className="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={percentage}>
-      <span className="scroll-progress__fill" style={{ transform: `scaleY(${progress})` }} />
-      <span className="scroll-progress__label">{percentage}%</span>
-    </div>
+    <aside className={`scroll-progress${isDragging ? " is-dragging" : ""}`} aria-label="Page navigation">
+      <div className="scroll-progress__rail">
+        <div className="scroll-progress__track" onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={handlePointerUp}>
+          <span className="scroll-progress__fill" style={{ transform: `translateX(-50%) scaleY(${progress})` }} aria-hidden="true" />
+          <button className="scroll-progress__thumb" type="button" aria-label="Drag to scroll the page" style={{ top: `${progress * 100}%` }} onKeyDown={(event) => {
+            const amount = window.innerHeight * 0.2;
+            if (event.key === "ArrowDown" || event.key === "PageDown") {
+              event.preventDefault();
+              window.scrollBy({ top: amount, behavior: "smooth" });
+            }
+            if (event.key === "ArrowUp" || event.key === "PageUp") {
+              event.preventDefault();
+              window.scrollBy({ top: -amount, behavior: "smooth" });
+            }
+          }} />
+        </div>
+        <nav className="scroll-progress__steps" aria-label="Page sections">
+          {scrollTargets.map((item) => (
+            <button className={`scroll-progress__step${activeSection === item.target ? " is-active" : ""}`} type="button" key={item.target} aria-label={`Go to ${item.label}`} aria-current={activeSection === item.target ? "step" : undefined} onClick={() => onNavigate(item.target)}>
+              <span className="scroll-progress__step-dot" aria-hidden="true" />
+              <span className="scroll-progress__step-label">{item.label}</span>
+            </button>
+          ))}
+        </nav>
+      </div>
+      <span className="scroll-progress__caption">Scroll to explore</span>
+    </aside>
   );
 }
 
@@ -140,7 +184,7 @@ export default function Index() {
 
   return (
     <main className="site-shell">
-      <ScrollProgress />
+      <ScrollProgress activeSection={activeSection} onNavigate={scrollToSection} />
       <PortfolioHeader />
 
       <section className="hero" aria-labelledby="hero-title">
