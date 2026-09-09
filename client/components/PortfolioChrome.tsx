@@ -15,12 +15,12 @@ export function PortfolioHeader() {
       <nav className="desktop-nav" aria-label="Primary navigation">
         <a className="nav-work" href={workUrl} target="_blank" rel="noreferrer">Work</a>
         <Link to="/about">About</Link>
-        <Link to="/#experience">Experience</Link>
-        <Link to="/#contact">Contact</Link>
+        <a href="https://www.linkedin.com/in/pushpender-sharma-ux/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/pushpenderux/" target="_blank" rel="noreferrer">Instagram</a>
         <a className="nav-resume" href={resumeUrl} target="_blank" rel="noreferrer">Resume</a>
       </nav>
       <button className="menu-toggle" type="button" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
-      {menuOpen && <nav className="mobile-nav" aria-label="Mobile navigation"><a href={workUrl} target="_blank" rel="noreferrer" onClick={closeMenu}>Work</a><Link to="/about" onClick={closeMenu}>About</Link><Link to="/#experience" onClick={closeMenu}>Experience</Link><Link to="/#contact" onClick={closeMenu}>Contact</Link><a href={resumeUrl} target="_blank" rel="noreferrer" onClick={closeMenu}>Resume</a></nav>}
+      {menuOpen && <nav className="mobile-nav" aria-label="Mobile navigation"><a href={workUrl} target="_blank" rel="noreferrer" onClick={closeMenu}>Work</a><Link to="/about" onClick={closeMenu}>About</Link><a href="https://www.linkedin.com/in/pushpender-sharma-ux/" target="_blank" rel="noreferrer" onClick={closeMenu}>LinkedIn</a><a href="https://www.instagram.com/pushpenderux/" target="_blank" rel="noreferrer" onClick={closeMenu}>Instagram</a><a href={resumeUrl} target="_blank" rel="noreferrer" onClick={closeMenu}>Resume</a></nav>}
     </header>
   );
 }
