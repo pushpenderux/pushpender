@@ -42,7 +42,7 @@ export default function Index() {
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__orb hero__orb--one" aria-hidden="true" /><div className="hero__orb hero__orb--two" aria-hidden="true" />
-        <div className="hero__content"><p className="eyebrow">Product designer, UX strategist, AI explorer</p><h1 id="hero-title">Good products feel <em>obvious.</em></h1><p className="hero__summary">I am Pushpender Sharma, a user-centered product designer who turns complex journeys into clear, useful digital experiences.</p><div className="hero__actions"><Link className="button button--primary" to="/#work">Explore selected work</Link><a className="text-link" href="#contact">Start a conversation</a></div></div>
+        <div className="hero__content"><p className="eyebrow">Product designer, UX strategist, AI explorer</p><h1 id="hero-title">Good products feel <em>obvious.</em></h1><p className="hero__summary">I am Pushpender Sharma, a user-centered product designer who turns complex journeys into clear, useful digital experiences.</p></div>
         <div className="hero__meta"><span>Based in India</span><span>Available for select projects</span><span>Six plus years shaping digital products</span></div>
       </section>
 
