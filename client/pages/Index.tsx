@@ -56,78 +56,6 @@ function useScrollReveal() {
   }, []);
 }
 
-function ScrollProgress({ activeSection, onNavigate }: { activeSection: string; onNavigate: (target: string) => void }) {
-  const [progress, setProgress] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-
-  useEffect(() => {
-    const updateProgress = () => {
-      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(scrollableHeight > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollableHeight)) : 0);
-    };
-
-    updateProgress();
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    window.addEventListener("resize", updateProgress);
-    return () => {
-      window.removeEventListener("scroll", updateProgress);
-      window.removeEventListener("resize", updateProgress);
-    };
-  }, []);
-
-  const scrollFromPointer = (clientY: number, element: HTMLDivElement) => {
-    const bounds = element.getBoundingClientRect();
-    const nextProgress = Math.min(1, Math.max(0, (clientY - bounds.top) / bounds.height));
-    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-    window.scrollTo({ top: nextProgress * scrollableHeight, behavior: "auto" });
-  };
-
-  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
-    setIsDragging(true);
-    event.currentTarget.setPointerCapture(event.pointerId);
-    scrollFromPointer(event.clientY, event.currentTarget);
-  };
-
-  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (isDragging) scrollFromPointer(event.clientY, event.currentTarget);
-  };
-
-  const handlePointerUp = (event: React.PointerEvent<HTMLDivElement>) => {
-    setIsDragging(false);
-    event.currentTarget.releasePointerCapture(event.pointerId);
-  };
-
-  return (
-    <aside className={`scroll-progress${isDragging ? " is-dragging" : ""}`} aria-label="Page navigation">
-      <div className="scroll-progress__rail">
-        <div className="scroll-progress__track" onPointerDown={handlePointerDown} onPointerMove={handlePointerMove} onPointerUp={handlePointerUp} onPointerCancel={handlePointerUp}>
-          <span className="scroll-progress__fill" style={{ transform: `translateX(-50%) scaleY(${progress})` }} aria-hidden="true" />
-          <button className="scroll-progress__thumb" type="button" aria-label="Drag to scroll the page" style={{ top: `${progress * 100}%` }} onKeyDown={(event) => {
-            const amount = window.innerHeight * 0.2;
-            if (event.key === "ArrowDown" || event.key === "PageDown") {
-              event.preventDefault();
-              window.scrollBy({ top: amount, behavior: "smooth" });
-            }
-            if (event.key === "ArrowUp" || event.key === "PageUp") {
-              event.preventDefault();
-              window.scrollBy({ top: -amount, behavior: "smooth" });
-            }
-          }} />
-        </div>
-        <nav className="scroll-progress__steps" aria-label="Page sections">
-          {scrollTargets.map((item) => (
-            <button className={`scroll-progress__step${activeSection === item.target ? " is-active" : ""}`} type="button" key={item.target} aria-label={`Go to ${item.label}`} aria-current={activeSection === item.target ? "step" : undefined} onClick={() => onNavigate(item.target)}>
-              <span className="scroll-progress__step-dot" aria-hidden="true" />
-              <span className="scroll-progress__step-label">{item.label}</span>
-            </button>
-          ))}
-        </nav>
-      </div>
-      <span className="scroll-progress__caption">Scroll to explore</span>
-    </aside>
-  );
-}
-
 function SectionIntro({ number, eyebrow, title, copy }: { number: string; eyebrow: string; title: React.ReactNode; copy: string }) {
   return (
     <div className="section-intro">
@@ -140,12 +68,12 @@ function SectionIntro({ number, eyebrow, title, copy }: { number: string; eyebro
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <Link to={`/work/${project.slug}`} className={`project-card project-card--small project-card--${project.tone}`} aria-label={`View ${project.client} case study`}>
+    <Link to={`/work/${project.slug}`} className={`project-card project-card--small project-card--${project.tone}`} aria-label={`View ${project.client} ${project.number === "02" ? "AI projects" : "case study"}`}>
       <div className="project-card__header"><span>{project.number}</span><span>{project.category} for {project.period}</span></div>
       <div className="project-card__art" aria-hidden="true">
         {project.image ? <img className="project-card__image" src={project.image} alt="" /> : <><div className="art-grid" /><div className="art-panel"><div className="art-panel__top"><i /><i /><i /></div><div className="art-panel__content"><span className="art-label">{project.client}</span><b>{project.feature}</b><span className="art-bar art-bar--wide" /><span className="art-bar" /><span className="art-bar art-bar--short" /><div className="art-button">View project</div></div></div><span className="art-stamp">{project.number}</span></>}
       </div>
-      <div className="project-card__body"><p className="project-card__client">{project.number === "01" ? "Women's fashion" : project.client}</p><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><span className="project-card__link">View case study</span></div>
+      <div className="project-card__body"><p className="project-card__client">{project.number === "01" ? "Womens Fashion" : project.client}</p><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><span className="project-card__link">{project.number === "02" ? "View AI projects" : "View case study"}</span></div>
     </Link>
   );
 }
@@ -184,7 +112,6 @@ export default function Index() {
 
   return (
     <main className="site-shell">
-      <ScrollProgress activeSection={activeSection} onNavigate={scrollToSection} />
       <PortfolioHeader />
 
       <section className="hero" aria-labelledby="hero-title">
