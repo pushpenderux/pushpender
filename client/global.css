@@ -125,7 +125,7 @@
   .section-intro h2 { grid-column: 1; color: var(--ink); font-size: clamp(42px, 5.6vw, 72px); line-height: .98; letter-spacing: -.065em; margin: 0; }
   .section-intro h2 span, .about__copy h2 span, .toolkit__heading h2 span { color: var(--blue); }
   .section-intro > p { grid-column: 2; align-self: end; color: var(--muted-text); font-size: 16px; line-height: 1.7; margin: 0 0 3px; max-width: 350px; }
-  .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
   .project-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: white; color: inherit; min-width: 0; text-decoration: none; transition: transform 170ms ease, border-color 170ms ease, box-shadow 170ms ease; }
   .project-card:hover { border-color: var(--blue); box-shadow: 0 16px 32px rgba(18,26,51,.1); transform: translateY(-4px); }
   .project-card--large { grid-row: span 2; }
@@ -133,6 +133,27 @@
   .project-card__header span:first-child { color: var(--blue); font-family: "Space Grotesk", sans-serif; font-size: 14px; }
   .project-card__art { height: 330px; min-height: 0; position: relative; overflow: hidden; display: grid; place-items: center; }
   .project-card__image { width: 100%; height: 100%; object-fit: contain; object-position: center; background: #f2ede3; }
+  .cosmic-art { width: 100%; height: 100%; display: grid; place-items: center; position: relative; overflow: hidden; background: radial-gradient(circle at 50% 35%, #fdfcff 0, #eeeaff 48%, #dfe4ff 100%); }
+  .cosmic-art__halo { position: absolute; width: 230px; height: 230px; border: 1px solid rgba(53,89,224,.2); border-radius: 50%; box-shadow: 0 0 0 24px rgba(216,244,95,.12), 0 0 0 52px rgba(53,89,224,.06); }
+  .cosmic-art__phone { position: relative; width: 174px; height: 280px; display: flex; flex-direction: column; overflow: hidden; border: 6px solid var(--ink); border-radius: 25px; background: #fbfbff; box-shadow: 16px 17px 0 rgba(18,26,51,.16); transform: rotate(-5deg); }
+  .cosmic-art__status { display: flex; justify-content: space-between; padding: 8px 12px 4px; color: var(--muted-text); font-size: 6px; font-weight: 700; }
+  .cosmic-art__heading { display: flex; align-items: center; justify-content: space-between; padding: 9px 13px 12px; color: var(--ink); font-family: "Space Grotesk", sans-serif; font-size: 16px; letter-spacing: -.05em; }
+  .cosmic-art__heading span { color: var(--blue); font-family: "IBM Plex Sans", sans-serif; font-size: 7px; letter-spacing: 0; }
+  .cosmic-art__list { display: grid; gap: 5px; padding: 0 9px; }
+  .cosmic-art__chat { display: grid; grid-template-columns: 24px 1fr auto; align-items: center; gap: 7px; padding: 7px 5px; border-radius: 9px; background: #f0efff; }
+  .cosmic-art__chat:nth-child(2) { background: #edf8f3; }
+  .cosmic-art__chat:nth-child(3) { background: #fff1f3; }
+  .cosmic-art__avatar { width: 23px; height: 23px; display: grid; place-items: center; border-radius: 50%; color: var(--ink); font-size: 8px; font-weight: 700; }
+  .cosmic-art__avatar--violet { background: #d9d0ff; }
+  .cosmic-art__avatar--blue { background: #c9e0ff; }
+  .cosmic-art__avatar--pink { background: #ffd6df; }
+  .cosmic-art__chat strong, .cosmic-art__chat small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cosmic-art__chat strong { color: var(--ink); font-size: 7px; }
+  .cosmic-art__chat small { max-width: 87px; color: var(--muted-text); font-size: 6px; margin-top: 2px; }
+  .cosmic-art__chat time { align-self: start; color: var(--muted-text); font-size: 5px; }
+  .cosmic-art__nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: auto 8px 8px; padding: 7px 4px 5px; border-top: 1px solid #e3e4ef; color: var(--muted-text); font-size: 6px; text-align: center; }
+  .cosmic-art__nav .is-active { color: var(--blue); font-weight: 700; }
+  .cosmic-art__label { position: absolute; right: 9%; bottom: 7%; color: rgba(18,26,51,.3); font-family: "Space Grotesk", sans-serif; font-size: 42px; font-weight: 700; letter-spacing: -.1em; }
   .project-card--large .project-card__art { height: 330px; }
   .project-card--blue .project-card__art { background: #dce6ff; }
   .project-card--lime .project-card__art { background: #ebf7b8; }
