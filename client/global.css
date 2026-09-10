@@ -131,10 +131,9 @@
   .project-card--large { grid-row: span 2; }
   .project-card__header { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 17px 19px 14px; color: var(--muted-text); font-size: 11px; font-weight: 600; letter-spacing: .035em; text-transform: uppercase; }
   .project-card__header span:first-child { color: var(--blue); font-family: "Space Grotesk", sans-serif; font-size: 14px; }
-  .project-card__art { height: 330px; min-height: 0; position: relative; overflow: hidden; display: grid; place-items: center; }
-  .project-card__image { width: 100%; height: 100%; object-fit: contain; object-position: center; background: #f2ede3; }
+  .project-card__art { height: 330px; min-height: 330px; max-height: 330px; flex: 0 0 330px; position: relative; overflow: hidden; display: grid; place-items: center; }
+  .project-card__image { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; object-position: center; background: #f2ede3; }
   .cosmic-art { width: 100%; height: 100%; display: grid; place-items: center; position: relative; overflow: hidden; background: radial-gradient(circle at 50% 35%, #fdfcff 0, #eeeaff 48%, #dfe4ff 100%); }
-  .cosmic-art__halo { position: absolute; width: 230px; height: 230px; border: 1px solid rgba(53,89,224,.2); border-radius: 50%; box-shadow: 0 0 0 24px rgba(216,244,95,.12), 0 0 0 52px rgba(53,89,224,.06); }
   .cosmic-art__phone { position: relative; width: 174px; height: 280px; display: flex; flex-direction: column; overflow: hidden; border: 6px solid var(--ink); border-radius: 25px; background: #fbfbff; box-shadow: 16px 17px 0 rgba(18,26,51,.16); transform: rotate(-5deg); }
   .cosmic-art__status { display: flex; justify-content: space-between; padding: 8px 12px 4px; color: var(--muted-text); font-size: 6px; font-weight: 700; }
   .cosmic-art__heading { display: flex; align-items: center; justify-content: space-between; padding: 9px 13px 12px; color: var(--ink); font-family: "Space Grotesk", sans-serif; font-size: 16px; letter-spacing: -.05em; }
@@ -382,7 +381,7 @@
   .proof-nav__copy strong { font-size: 17px; }
   .section-intro h2 { font-size: 48px; line-height: 1; }
   .project-card__header { align-items: flex-start; flex-direction: column; gap: 3px; }
-  .project-card__art, .project-card--large .project-card__art { height: 225px; }
+  .project-card__art, .project-card--large .project-card__art { height: 225px; min-height: 225px; max-height: 225px; flex-basis: 225px; }
   .art-panel, .project-card--large .art-panel { width: 65%; }
   .about__visual { min-height: 350px; }
   .about__visual-card { width: 76%; min-height: 245px; padding: 19px; }

@@ -69,7 +69,6 @@ function SectionIntro({ number, eyebrow, title, copy }: { number: string; eyebro
 function CosmicChatArtwork() {
   return (
     <div className="cosmic-art">
-      <div className="cosmic-art__halo" />
       <div className="cosmic-art__phone">
         <div className="cosmic-art__status"><span>9:41</span><span>Connected</span></div>
         <div className="cosmic-art__heading"><strong>Messages</strong><span>Search</span></div>
