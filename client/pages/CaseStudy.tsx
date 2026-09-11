@@ -163,15 +163,19 @@ function WomensFashionCaseStudy() {
         </section>
 
         <section className="fashion-content-section fashion-ui-section" aria-labelledby="fashion-ui-title">
-          <div className="fashion-section-heading">
-            <p className="fashion-section-number">05 / UI Design</p>
-            <h2 id="fashion-ui-title">UI Design</h2>
-          </div>
-          <StudyFigure src={fashionImages.uiDesign} alt="Product landing page mockup for the women's fashion app" caption="Product Landing Page mockup" className="fashion-figure--ui" />
-          <div className="fashion-copy-block">
-            <p>
-              Once the usability issues were resolved, I moved on to designing the final screens in Figma. My goal was to create a visual identity aligned with the brand's values and message. I checked the competition and took a deep dive into my catalog of references for inspiration, then designed high-fidelity mockups with attention to typography, colors, imagery, and branding elements.
-            </p>
+          <div className="fashion-ui-layout">
+            <div className="fashion-ui-layout__copy">
+              <div className="fashion-section-heading">
+                <p className="fashion-section-number">05 / UI Design</p>
+                <h2 id="fashion-ui-title">UI Design</h2>
+              </div>
+              <div className="fashion-copy-block">
+                <p>
+                  Once the usability issues were resolved, I moved on to designing the final screens in Figma. My goal was to create a visual identity aligned with the brand's values and message. I checked the competition and took a deep dive into my catalog of references for inspiration, then designed high-fidelity mockups with attention to typography, colors, imagery, and branding elements.
+                </p>
+              </div>
+            </div>
+            <StudyFigure src={fashionImages.mobileListing} alt="Women's fashion mobile product listing screen" caption="Product Landing Page mockup" className="fashion-figure--ui" />
           </div>
           <div className="fashion-mobile-grid" aria-label="Mobile app screens">
             <img src={fashionImages.mobileListing} alt="Women's fashion mobile product listing screen" />

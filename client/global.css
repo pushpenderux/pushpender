@@ -330,12 +330,20 @@
   .fashion-figure { margin: 60px 0 0; }
   .fashion-figure__frame { overflow: hidden; border: 1px solid rgba(16,17,20,.12); border-radius: 22px; background: var(--surface); box-shadow: 0 18px 40px rgba(16,17,20,.06); }
   .fashion-figure__frame img { display: block; width: 100%; height: auto; }
-  .fashion-figure figcaption { display: inline-block; color: var(--ink); font-size: 15px; line-height: 1.4; font-weight: 750; letter-spacing: .01em; margin-top: 16px; padding: 3px 8px; background: linear-gradient(transparent 45%, var(--lime) 45%); }
+  .fashion-figure figcaption { display: table; color: var(--ink); font-size: 15px; line-height: 1.4; font-weight: 750; letter-spacing: .01em; margin: 16px auto 0; padding: 3px 8px; background: linear-gradient(transparent 45%, var(--lime) 45%); }
   .fashion-copy-block { max-width: 760px; margin: 45px auto 0; }
   .fashion-figure--journey, .fashion-figure--research { max-width: 900px; margin-left: 0; margin-right: auto; }
-  .fashion-figure--journey figcaption, .fashion-figure--research figcaption, .fashion-figure--wireframes figcaption, .fashion-figure--ui figcaption, .fashion-figure--final figcaption { display: block; text-align: center; }
+  .fashion-figure--journey figcaption, .fashion-figure--research figcaption, .fashion-figure--wireframes figcaption, .fashion-figure--ui figcaption, .fashion-figure--final figcaption { display: table; text-align: center; }
   .fashion-figure--wireframes .fashion-figure__frame, .fashion-figure--ui .fashion-figure__frame { background: white; }
   .fashion-ui-section .fashion-copy-block { margin-top: 42px; }
+  .fashion-ui-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(260px, .9fr); gap: clamp(45px, 9vw, 130px); align-items: center; }
+  .fashion-ui-layout__copy { max-width: 560px; }
+  .fashion-ui-layout__copy .fashion-section-heading { border-top: 0; padding-top: 0; margin-bottom: 30px; }
+  .fashion-ui-layout__copy .fashion-copy-block { max-width: 540px; margin: 0; }
+  .fashion-ui-layout > .fashion-figure { width: min(100%, 330px); justify-self: end; margin: 0; }
+  .fashion-ui-layout > .fashion-figure .fashion-figure__frame { border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+  .fashion-ui-layout > .fashion-figure img { object-fit: contain; }
+  .fashion-ui-layout + .fashion-mobile-grid { margin-top: 80px; }
   .fashion-mobile-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; margin-top: 55px; }
   .fashion-mobile-grid img { display: block; width: 100%; height: auto; border: 1px solid rgba(16,17,20,.12); border-radius: 18px; background: white; box-shadow: 0 14px 28px rgba(16,17,20,.07); }
   .fashion-value-section__intro { max-width: 760px; color: var(--muted-text); font-size: 17px; line-height: 1.8; letter-spacing: .005em; margin: -10px 0 56px; }
@@ -435,6 +443,8 @@
   .fashion-process__steps { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 38px; margin-top: 55px; }
   .fashion-process__steps li::after { display: none; }
   .fashion-content-section, .fashion-value-section { margin-top: 105px; }
+  .fashion-ui-layout { grid-template-columns: minmax(0, 1fr) minmax(220px, .65fr); gap: 45px; }
+  .fashion-ui-layout > .fashion-figure { width: min(100%, 280px); }
   .fashion-final-section { margin-top: 105px; }
   .case-study__hero { display: block; }
   .case-study__hero > p { max-width: 540px; margin-top: 25px; }
@@ -511,6 +521,10 @@
   .fashion-process { margin-top: 85px; padding: 35px 20px 42px; border-radius: 19px; }
   .fashion-process__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 42px; }
   .fashion-content-section, .fashion-value-section { margin-top: 85px; }
+  .fashion-ui-layout { grid-template-columns: 1fr; gap: 30px; }
+  .fashion-ui-layout__copy .fashion-section-heading { margin-bottom: 26px; }
+  .fashion-ui-layout > .fashion-figure { width: min(100%, 240px); justify-self: center; }
+  .fashion-ui-layout + .fashion-mobile-grid { margin-top: 48px; }
   .fashion-content-section .fashion-section-heading, .fashion-value-section .fashion-section-heading { padding-top: 35px; }
   .fashion-figure { margin-top: 38px; }
   .fashion-figure__frame { border-radius: 15px; }
