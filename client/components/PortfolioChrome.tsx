@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Menu, X } from "lucide-react";
+import { Mail, Menu, UserRound, X } from "lucide-react";
 
 const resumeUrl = "https://drive.google.com/file/d/1__8G6ZHDYltuZUdplqrhPwu8yfFoEAL1/view";
 const workUrl = "https://drive.google.com/drive/folders/17VkyuCkfRlNZqIZYW_hqgQ0ZmpEbH2tu";
@@ -28,12 +28,17 @@ export function PortfolioHeader() {
 export function PortfolioFooter() {
   return (
     <footer className="site-footer">
-      <a className="social-link" href="https://www.behance.net/pushpenderSh" target="_blank" rel="noreferrer"><span className="social-link__icon" aria-hidden="true">Be</span><span>Behance</span></a>
-      <a className="social-link" href="https://www.linkedin.com/in/pushpender-sharma-ux/" target="_blank" rel="noreferrer"><span className="social-link__icon" aria-hidden="true">in</span><span>LinkedIn</span></a>
-      <a className="social-link" href="https://www.instagram.com/pushpenderux/" target="_blank" rel="noreferrer"><span className="social-link__icon" aria-hidden="true">IG</span><span>Instagram</span></a>
-      <a href="mailto:pushpender.sharmaoffical@outlook.com"><Mail size={15} /> pushpender.sharmaoffical@outlook.com</a>
-      <span>Pushpender Sharma, UX Designer</span>
-      <span>Copyright {new Date().getFullYear()}</span>
+      <div className="site-footer__identity">
+        <span className="site-footer__avatar" aria-hidden="true"><UserRound size={28} strokeWidth={1.8} /></span>
+        <span><strong>Pushpender Sharma</strong><small>UX Designer</small></span>
+      </div>
+      <nav className="site-footer__socials" aria-label="Social links">
+        <a className="social-link" href="https://www.behance.net/pushpenderSh" target="_blank" rel="noreferrer"><span className="social-link__icon" aria-hidden="true">Be</span><span>Behance</span></a>
+        <a className="social-link" href="https://www.linkedin.com/in/pushpender-sharma-ux/" target="_blank" rel="noreferrer"><span className="social-link__icon" aria-hidden="true">in</span><span>LinkedIn</span></a>
+        <a className="social-link" href="https://www.instagram.com/pushpenderux/" target="_blank" rel="noreferrer"><span className="social-link__icon" aria-hidden="true">IG</span><span>Instagram</span></a>
+      </nav>
+      <a className="site-footer__email" href="mailto:pushpender.sharmaoffical@outlook.com"><span className="site-footer__email-icon" aria-hidden="true"><Mail size={19} strokeWidth={1.8} /></span><span>pushpender.sharmaoffical@outlook.com</span></a>
+      <span className="site-footer__copyright">Copyright {new Date().getFullYear()}</span>
     </footer>
   );
 }
