@@ -292,6 +292,60 @@
   .case-study__contact h2 { color: white; font-size: clamp(38px, 5vw, 68px); line-height: .95; letter-spacing: -.08em; margin: 0; }
   .case-study-shell > .site-footer, .about-page > .site-footer { width: min(1200px, calc(100% - 40px)); margin: 0 auto 24px; border-radius: 20px; background: var(--ink); padding: 26px 30px; }
 
+  .fashion-case-study-shell { background: var(--paper); }
+  .case-study--fashion { width: min(1360px, calc(100% - 40px)); padding: 54px 0 150px; }
+  .case-study--fashion .case-study__back { margin-bottom: 58px; }
+  .fashion-hero { display: grid; grid-template-columns: minmax(0, .96fr) minmax(420px, 1.04fr); gap: clamp(50px, 8vw, 120px); align-items: center; }
+  .fashion-hero__copy { min-width: 0; }
+  .fashion-hero .case-study__kicker { margin-bottom: 48px; }
+  .fashion-eyebrow { color: var(--blue); font-size: 11px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 17px; }
+  .fashion-hero h1 { max-width: 700px; color: var(--ink); font-size: clamp(58px, 7.3vw, 112px); line-height: .91; letter-spacing: -.085em; margin: 0; }
+  .fashion-hero h1 em { color: var(--blue); font-style: normal; }
+  .fashion-hero__summary { max-width: 540px; color: var(--muted-text); font-size: 19px; line-height: 1.7; letter-spacing: .005em; margin: 31px 0 0; }
+  .fashion-hero__visual { min-height: 545px; overflow: hidden; border: 1px solid rgba(16,17,20,.12); border-radius: 28px; background: #eee8dc; box-shadow: 20px 22px 0 rgba(124,92,252,.13); transform: rotate(1.4deg); }
+  .fashion-hero__visual img { display: block; width: 100%; height: 100%; min-height: 545px; object-fit: contain; object-position: center; }
+  .fashion-section-heading { margin-bottom: 45px; }
+  .fashion-section-number { color: var(--blue); font-size: 11px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 18px; }
+  .fashion-section-heading h2 { max-width: 850px; color: var(--ink); font-size: clamp(48px, 6.3vw, 86px); line-height: .92; letter-spacing: -.08em; margin: 0; }
+  .fashion-overview { display: grid; grid-template-columns: minmax(300px, .9fr) minmax(0, 1.1fr); gap: clamp(50px, 11vw, 170px); align-items: start; border-top: 1px solid var(--line); margin-top: 150px; padding-top: 55px; }
+  .fashion-overview__copy { max-width: 650px; padding-top: 39px; }
+  .fashion-overview__copy p, .fashion-copy-block p { color: var(--muted-text); font-size: 17px; line-height: 1.8; letter-spacing: .005em; margin: 0 0 25px; }
+  .fashion-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 65px; }
+  .fashion-fact { min-width: 0; padding: 31px 32px 34px; border: 1px solid rgba(16,17,20,.11); border-radius: 20px; background: rgba(255,255,255,.68); }
+  .fashion-fact h3 { color: var(--ink); font-size: 25px; letter-spacing: -.055em; margin: 0 0 14px; }
+  .fashion-fact p { color: var(--muted-text); font-size: 15px; line-height: 1.7; margin: 0; }
+  .fashion-fact--details { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; border-color: rgba(255,255,255,.12); background: var(--ink); }
+  .fashion-fact--details h3 { color: var(--lime); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+  .fashion-fact--details p { color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.8; }
+  .fashion-process { margin-top: 155px; border-radius: 26px; background: var(--ink); color: white; padding: 62px 56px 70px; }
+  .fashion-process .fashion-section-number { color: var(--lime); }
+  .fashion-process .fashion-section-heading h2 { color: white; }
+  .fashion-process__steps { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; list-style: none; margin: 72px 0 0; padding: 0; }
+  .fashion-process__steps li { position: relative; display: flex; flex-direction: column; align-items: center; gap: 16px; min-width: 0; text-align: center; }
+  .fashion-process__steps li:not(:last-child)::after { content: ""; position: absolute; left: calc(50% + 30px); right: calc(-50% + 30px); top: 25px; height: 1px; background: rgba(255,255,255,.38); }
+  .fashion-process__steps span { position: relative; z-index: 1; width: 50px; height: 50px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.58); border-radius: 50%; background: var(--ink); color: white; font-family: "Space Grotesk", sans-serif; font-size: 17px; font-weight: 700; }
+  .fashion-process__steps strong { color: rgba(255,255,255,.75); font-size: 12px; line-height: 1.4; letter-spacing: .015em; }
+  .fashion-content-section, .fashion-value-section { width: min(1050px, 100%); margin: 155px auto 0; }
+  .fashion-content-section .fashion-section-heading, .fashion-value-section .fashion-section-heading { border-top: 1px solid var(--line); padding-top: 52px; }
+  .fashion-figure { margin: 60px 0 0; }
+  .fashion-figure__frame { overflow: hidden; border: 1px solid rgba(16,17,20,.12); border-radius: 22px; background: var(--surface); box-shadow: 0 18px 40px rgba(16,17,20,.06); }
+  .fashion-figure__frame img { display: block; width: 100%; height: auto; }
+  .fashion-figure figcaption { display: inline-block; color: var(--ink); font-size: 15px; line-height: 1.4; font-weight: 750; letter-spacing: .01em; margin-top: 16px; padding: 3px 8px; background: linear-gradient(transparent 45%, var(--lime) 45%); }
+  .fashion-copy-block { max-width: 760px; margin: 45px auto 0; }
+  .fashion-figure--journey, .fashion-figure--research { max-width: 900px; margin-left: auto; margin-right: auto; }
+  .fashion-figure--wireframes .fashion-figure__frame, .fashion-figure--ui .fashion-figure__frame { background: white; }
+  .fashion-ui-section .fashion-copy-block { margin-top: 42px; }
+  .fashion-mobile-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; margin-top: 55px; }
+  .fashion-mobile-grid img { display: block; width: 100%; height: auto; border: 1px solid rgba(16,17,20,.12); border-radius: 18px; background: white; box-shadow: 0 14px 28px rgba(16,17,20,.07); }
+  .fashion-value-section__intro { max-width: 760px; color: var(--muted-text); font-size: 17px; line-height: 1.8; letter-spacing: .005em; margin: -10px 0 56px; }
+  .fashion-value-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .fashion-value-card { min-width: 0; }
+  .fashion-value-card img { display: block; width: 100%; aspect-ratio: 1.15; object-fit: cover; border: 1px solid rgba(16,17,20,.12); border-radius: 18px; background: white; }
+  .fashion-value-card h3 { color: var(--blue); font-size: 39px; line-height: 1; letter-spacing: -.06em; margin: 21px 0 10px; }
+  .fashion-value-card p { color: var(--muted-text); font-size: 15px; line-height: 1.7; margin: 0; }
+  .fashion-final-section { width: min(1200px, 100%); margin: 155px auto 0; }
+  .fashion-figure--final { margin-top: 0; }
+  .fashion-figure--final .fashion-figure__frame { border-radius: 25px; }
   .about-page { background: var(--paper); }
   .about-hero { width: min(1360px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: .82fr 1.18fr; gap: 100px; align-items: center; padding: 76px 0 140px; }
   .about-profile img { display: block; width: 100%; aspect-ratio: .96; object-fit: cover; object-position: left center; border: 1px solid rgba(16,17,20,.12); border-radius: 24px; box-shadow: 15px 18px 0 rgba(124,92,252,.15); }
@@ -367,6 +421,20 @@
   .contact-section { min-height: 650px; padding: 30px 28px 22px; }
   .contact-section__content { grid-template-columns: 1fr; gap: 30px; margin-top: auto; }
   .contact-section__content > div { max-width: 370px; }
+  .case-study--fashion { width: min(100% - 36px, 680px); padding-top: 25px; padding-bottom: 95px; }
+  .fashion-hero { grid-template-columns: 1fr; gap: 45px; }
+  .fashion-hero .case-study__kicker { margin-bottom: 34px; }
+  .fashion-hero h1 { font-size: clamp(54px, 10vw, 82px); }
+  .fashion-hero__visual, .fashion-hero__visual img { min-height: 420px; }
+  .fashion-overview { grid-template-columns: 1fr; gap: 18px; margin-top: 105px; }
+  .fashion-overview__copy { padding-top: 0; }
+  .fashion-facts { grid-template-columns: 1fr; }
+  .fashion-fact--details { grid-column: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fashion-process { margin-top: 105px; padding: 50px 28px 58px; }
+  .fashion-process__steps { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 38px; margin-top: 55px; }
+  .fashion-process__steps li::after { display: none; }
+  .fashion-content-section, .fashion-value-section { margin-top: 105px; }
+  .fashion-final-section { margin-top: 105px; }
   .case-study__hero { display: block; }
   .case-study__hero > p { max-width: 540px; margin-top: 25px; }
   .case-study__visual { height: 390px; margin-top: 50px; }
@@ -427,6 +495,29 @@
   .site-footer__email { font-size: 12px; overflow-wrap: anywhere; }
   .site-footer__copyright { justify-self: start; }
   .case-study { width: min(100% - 36px, 680px); padding-top: 25px; }
+  .case-study--fashion { width: min(100% - 36px, 680px); padding-top: 25px; }
+  .fashion-hero { gap: 32px; }
+  .fashion-hero h1 { font-size: clamp(46px, 13vw, 68px); }
+  .fashion-hero__summary { font-size: 17px; line-height: 1.7; }
+  .fashion-hero__visual, .fashion-hero__visual img { min-height: 300px; }
+  .fashion-section-heading { margin-bottom: 31px; }
+  .fashion-section-heading h2 { font-size: clamp(44px, 13vw, 62px); }
+  .fashion-overview { margin-top: 85px; padding-top: 35px; }
+  .fashion-overview__copy p, .fashion-copy-block p, .fashion-value-section__intro { font-size: 16px; line-height: 1.75; }
+  .fashion-facts { margin-top: 42px; gap: 12px; }
+  .fashion-fact { padding: 25px 22px 27px; }
+  .fashion-fact--details { grid-template-columns: 1fr; gap: 24px; }
+  .fashion-process { margin-top: 85px; padding: 35px 20px 42px; border-radius: 19px; }
+  .fashion-process__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 42px; }
+  .fashion-content-section, .fashion-value-section { margin-top: 85px; }
+  .fashion-content-section .fashion-section-heading, .fashion-value-section .fashion-section-heading { padding-top: 35px; }
+  .fashion-figure { margin-top: 38px; }
+  .fashion-figure__frame { border-radius: 15px; }
+  .fashion-copy-block { margin-top: 34px; }
+  .fashion-mobile-grid { gap: 8px; margin-top: 37px; }
+  .fashion-mobile-grid img { border-radius: 10px; }
+  .fashion-value-grid { grid-template-columns: 1fr; gap: 38px; }
+  .fashion-final-section { margin-top: 85px; }
   .case-study__back { margin-bottom: 38px; }
   .case-study__hero h1 { font-size: 57px; }
   .case-study__meta { grid-template-columns: 1fr; gap: 15px; }
