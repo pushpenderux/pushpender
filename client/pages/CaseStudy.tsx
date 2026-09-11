@@ -133,18 +133,22 @@ function WomensFashionCaseStudy() {
         </section>
 
         <section className="fashion-content-section" aria-labelledby="fashion-journey-title">
-          <div className="fashion-section-heading">
-            <p className="fashion-section-number">03 / Research</p>
-            <h2 id="fashion-journey-title">User Journey</h2>
-          </div>
-          <StudyFigure src={fashionImages.journey} alt="User journey map for the women's fashion checkout experience" caption="User Journey Map" className="fashion-figure--journey" />
-          <div className="fashion-copy-block">
-            <p>
-              To achieve our business goal, our primary focus was to ensure a seamless checkout process for our users. To identify areas for improvement, we created a user journey map based on the current state. Through this analysis, we identified two unnecessary steps and potential drop-off points in the flow. By eliminating these elements in the new design, we enhanced the checkout experience and improved conversion rates. The streamlined process now allows users to proceed swiftly to the checkout screen without encountering hiccups along the way.
-            </p>
-            <p>
-              With the help of Hotjar and UXCam, we checked heatmaps, user feedback surveys, and analytics data to gain better insights into user behavior and validate the effectiveness of the mapped journeys.
-            </p>
+          <div className="fashion-journey-layout">
+            <div className="fashion-journey-layout__copy">
+              <div className="fashion-section-heading">
+                <p className="fashion-section-number">03 / Research</p>
+                <h2 id="fashion-journey-title">User Journey</h2>
+              </div>
+              <div className="fashion-copy-block">
+                <p>
+                  To achieve our business goal, our primary focus was to ensure a seamless checkout process for our users. To identify areas for improvement, we created a user journey map based on the current state. Through this analysis, we identified two unnecessary steps and potential drop-off points in the flow. By eliminating these elements in the new design, we enhanced the checkout experience and improved conversion rates. The streamlined process now allows users to proceed swiftly to the checkout screen without encountering hiccups along the way.
+                </p>
+                <p>
+                  With the help of Hotjar and UXCam, we checked heatmaps, user feedback surveys, and analytics data to gain better insights into user behavior and validate the effectiveness of the mapped journeys.
+                </p>
+              </div>
+            </div>
+            <StudyFigure src={fashionImages.journey} alt="User journey map for the women's fashion checkout experience" caption="User Journey Map" className="fashion-figure--journey" />
           </div>
           <StudyFigure src={fashionImages.focusGroup} alt="Focus group results comparing three design solutions" caption="Focus Group Result" className="fashion-figure--research" />
         </section>
