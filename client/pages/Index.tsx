@@ -146,7 +146,7 @@ export default function Index() {
         <div className="hero__orb hero__orb--one" aria-hidden="true" /><div className="hero__orb hero__orb--two" aria-hidden="true" />
         <div className="hero__topline"><span>Independent UX practice</span><span>Portfolio / 2026</span></div>
         <div className="hero__content"><p className="eyebrow"><span className="eyebrow__dot" />Product designer, UX strategist, AI explorer</p><h1 id="hero-title">Good products<br /><em>feel obvious.</em></h1><p className="hero__summary">I am Pushpender Sharma, a user-centered product designer who turns complex journeys into clear, useful digital experiences.</p><div className="hero__signal"><span className="hero__signal-dot" />Available for thoughtful collaborations</div></div>
-        <div className="hero__visual" aria-hidden="true"><div className="hero__visual-top"><span>Interface direction</span><span>01 / 04</span></div><div className="hero__visual-orbit hero__visual-orbit--one" /><div className="hero__visual-orbit hero__visual-orbit--two" /><div className="hero__visual-card"><span className="hero__visual-card-label">Product / 001</span><strong>Make the next<br />step feel natural.</strong><span className="hero__visual-line" /><span className="hero__visual-chip">Human first</span></div></div>
+        <div className="hero__visual"><img className="hero__visual-image" src="https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2Fa0c604072c8e4338981d847d19a28d79?format=webp&width=800&height=1200" alt="Portrait of Pushpender Sharma" /></div>
         <div className="hero__meta"><span>Based in India</span><span>Available for select projects</span><span>Six plus years shaping digital products</span></div>
       </section>
 
