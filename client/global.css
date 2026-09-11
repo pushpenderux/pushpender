@@ -332,7 +332,8 @@
   .fashion-figure__frame img { display: block; width: 100%; height: auto; }
   .fashion-figure figcaption { display: inline-block; color: var(--ink); font-size: 15px; line-height: 1.4; font-weight: 750; letter-spacing: .01em; margin-top: 16px; padding: 3px 8px; background: linear-gradient(transparent 45%, var(--lime) 45%); }
   .fashion-copy-block { max-width: 760px; margin: 45px auto 0; }
-  .fashion-figure--journey, .fashion-figure--research { max-width: 900px; margin-left: auto; margin-right: auto; }
+  .fashion-figure--journey, .fashion-figure--research { max-width: 900px; margin-left: 0; margin-right: auto; }
+  .fashion-figure--journey figcaption, .fashion-figure--research figcaption, .fashion-figure--wireframes figcaption, .fashion-figure--ui figcaption, .fashion-figure--final figcaption { display: block; text-align: center; }
   .fashion-figure--wireframes .fashion-figure__frame, .fashion-figure--ui .fashion-figure__frame { background: white; }
   .fashion-ui-section .fashion-copy-block { margin-top: 42px; }
   .fashion-mobile-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; margin-top: 55px; }
