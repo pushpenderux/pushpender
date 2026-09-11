@@ -234,7 +234,7 @@
   .contact-section__actions { display: flex; flex-wrap: wrap; gap: 10px; }
   .site-footer { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "identity socials" "email copyright"; align-items: center; gap: 24px 32px; border-top: 1px solid rgba(255,255,255,.26); padding-top: 20px; color: rgba(255,255,255,.68); font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; font-size: 12px; position: relative; z-index: 1; }
   .site-footer__identity { grid-area: identity; display: flex; align-items: center; gap: 12px; }
-  .site-footer__avatar { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid rgba(216,244,95,.6); border-radius: 15px; background: rgba(216,244,95,.12); color: var(--lime); }
+  .site-footer__avatar { width: 52px; height: 52px; display: grid; place-items: center; border: 3px solid rgba(216,244,95,.6); border-radius: 12px; overflow: hidden; background: rgba(216,244,95,.12); color: var(--lime); }
   .site-footer__identity > span:last-child { display: flex; flex-direction: column; gap: 2px; }
   .site-footer__identity strong { color: white; font-family: "Space Grotesk", sans-serif; font-size: 15px; letter-spacing: -.03em; }
   .site-footer__identity small { color: rgba(255,255,255,.62); font-size: 11px; }
@@ -242,7 +242,7 @@
   .site-footer a { display: inline-flex; align-items: center; gap: 9px; color: white; text-decoration: none; }
   .site-footer a:hover { color: var(--lime); }
   .social-link { font-size: 11px; font-weight: 600; }
-  .social-link__icon { width: 34px; height: 34px; display: inline-grid; place-items: center; border: 1px solid rgba(255,255,255,.36); border-radius: 10px; background: rgba(255,255,255,.06); font-family: "Space Grotesk", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: -.04em; transition: border-color 170ms ease, background 170ms ease, color 170ms ease; }
+  .social-link__icon { width: 34px; height: 34px; display: inline-grid; place-items: center; border: 3px solid rgba(255,255,255,.36); border-radius: 9px; overflow: hidden; background: rgba(255,255,255,.06); font-family: "Space Grotesk", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: -.04em; transition: border-color 170ms ease, background 170ms ease, color 170ms ease; }
   .social-link:hover .social-link__icon { border-color: var(--lime); background: var(--lime); color: var(--ink); }
   .site-footer__email { grid-area: email; color: rgba(255,255,255,.76) !important; font-size: 13px; }
   .site-footer__email-icon { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 10px; color: var(--lime); }
