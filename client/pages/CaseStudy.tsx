@@ -154,15 +154,19 @@ function WomensFashionCaseStudy() {
         </section>
 
         <section className="fashion-content-section" aria-labelledby="fashion-wireframes-title">
-          <div className="fashion-section-heading">
-            <p className="fashion-section-number">04 / UX Design</p>
-            <h2 id="fashion-wireframes-title">Wireframes</h2>
-          </div>
-          <StudyFigure src={fashionImages.wireframes} alt="Low-fidelity wireframe for the women's fashion product listing experience" caption="A rough low-fidelity mockup" className="fashion-figure--wireframes" />
-          <div className="fashion-copy-block">
-            <p>
-              Using Figma, I translated my first sketches into low-fidelity wireframes. Then, I improved them by adding relevant stock images and copy provided by the marketing team. At this stage, the wireframes were defined enough for user testing. Based on four tests, I made a few alterations and moved on to creating high-fidelity prototypes.
-            </p>
+          <div className="fashion-wireframes-layout">
+            <div className="fashion-wireframes-layout__copy">
+              <div className="fashion-section-heading">
+                <p className="fashion-section-number">04 / UX Design</p>
+                <h2 id="fashion-wireframes-title">Wireframes</h2>
+              </div>
+              <div className="fashion-copy-block">
+                <p>
+                  Using Figma, I translated my first sketches into low-fidelity wireframes. Then, I improved them by adding relevant stock images and copy provided by the marketing team. At this stage, the wireframes were defined enough for user testing. Based on four tests, I made a few alterations and moved on to creating high-fidelity prototypes.
+                </p>
+              </div>
+            </div>
+            <StudyFigure src={fashionImages.wireframes} alt="Low-fidelity wireframe for the women's fashion product listing experience" caption="A rough low-fidelity mockup" className="fashion-figure--wireframes" />
           </div>
         </section>
 

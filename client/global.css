@@ -350,6 +350,11 @@
   .fashion-journey-layout__copy .fashion-copy-block { max-width: 500px; margin: 0; }
   .fashion-journey-layout > .fashion-figure { width: 100%; max-width: none; margin: 0; }
   .fashion-journey-layout + .fashion-figure--research { margin-top: 105px; }
+  .fashion-wireframes-layout { display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); gap: clamp(48px, 8vw, 105px); align-items: center; }
+  .fashion-wireframes-layout__copy { min-width: 0; }
+  .fashion-wireframes-layout__copy .fashion-section-heading { border-top: 0; padding-top: 0; margin-bottom: 30px; }
+  .fashion-wireframes-layout__copy .fashion-copy-block { max-width: 500px; margin: 0; }
+  .fashion-wireframes-layout > .fashion-figure { width: 100%; max-width: none; margin: 0; }
   .fashion-mobile-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; margin-top: 55px; }
   .fashion-mobile-grid img { display: block; width: 100%; height: auto; border: 1px solid rgba(16,17,20,.12); border-radius: 18px; background: white; box-shadow: 0 14px 28px rgba(16,17,20,.07); }
   .fashion-value-section__intro { max-width: 760px; color: var(--muted-text); font-size: 17px; line-height: 1.8; letter-spacing: .005em; margin: -10px 0 56px; }
@@ -450,6 +455,7 @@
   .fashion-process__steps li::after { display: none; }
   .fashion-content-section, .fashion-value-section { margin-top: 105px; }
   .fashion-journey-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 45px; }
+  .fashion-wireframes-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 45px; }
   .fashion-ui-layout { grid-template-columns: minmax(0, 1fr) minmax(220px, .65fr); gap: 45px; }
   .fashion-ui-layout > .fashion-figure { width: min(100%, 280px); }
   .fashion-final-section { margin-top: 105px; }
@@ -532,6 +538,9 @@
   .fashion-journey-layout__copy .fashion-copy-block { max-width: none; }
   .fashion-journey-layout > .fashion-figure { width: min(100%, 520px); justify-self: center; }
   .fashion-journey-layout + .fashion-figure--research { margin-top: 72px; }
+  .fashion-wireframes-layout { grid-template-columns: 1fr; gap: 30px; }
+  .fashion-wireframes-layout__copy .fashion-copy-block { max-width: none; }
+  .fashion-wireframes-layout > .fashion-figure { width: min(100%, 520px); justify-self: center; }
   .fashion-ui-layout { grid-template-columns: 1fr; gap: 30px; }
   .fashion-ui-layout__copy .fashion-section-heading { margin-bottom: 26px; }
   .fashion-ui-layout > .fashion-figure { width: min(100%, 240px); justify-self: center; }
