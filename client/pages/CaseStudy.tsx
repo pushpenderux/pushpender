@@ -185,7 +185,7 @@ function WomensFashionCaseStudy() {
             </div>
             <StudyFigure src={fashionImages.mobileListing} alt="Women's fashion mobile product listing screen" caption="Product Landing Page mockup" className="fashion-figure--ui" />
           </div>
-          <div className="fashion-mobile-grid" aria-label="Mobile app screens">
+          <div className="fashion-mobile-grid" role="group" aria-label="Mobile app screens">
             <img src={fashionImages.mobileListing} alt="Women's fashion mobile product listing screen" />
             <img src={fashionImages.mobileProduct} alt="Women's fashion mobile product detail screen" />
             <img src={fashionImages.mobileCheckout} alt="Women's fashion mobile checkout screen" />
@@ -215,7 +215,7 @@ function WomensFashionCaseStudy() {
           <StudyFigure src={fashionImages.finalProduct} alt="Final women's fashion app product screens" caption="Women's fashion app final product" className="fashion-figure--final" />
         </section>
       </article>
-      <section className="case-study__contact"><div><p className="section-kicker section-kicker--light"><span>Next step</span></p><h2>Have a similar problem?</h2></div><a className="button button--light" href="mailto:pushpender.sharmaoffical@outlook.com">Contact me</a></section>
+      <section className="case-study__contact" aria-labelledby="fashion-contact-title"><div><p className="section-kicker section-kicker--light"><span>Next step</span></p><h2 id="fashion-contact-title">Have a similar problem?</h2></div><a className="button button--light" href="mailto:pushpender.sharmaoffical@outlook.com">Contact me</a></section>
       <PortfolioFooter />
     </main>
   );
@@ -253,7 +253,7 @@ export default function CaseStudy() {
         <div className={`case-study__visual case-study__visual--${project.tone}`}><img className="case-study__visual-image" src={visualImage} alt={`${clientLabel} project visual`} /></div>
         <div className="case-study__body"><aside><p>Project role</p><strong>Product design and UX strategy</strong><p>Outcome</p><strong>{project.outcome}</strong></aside><div className="case-study__copy"><h2>The challenge</h2><p>Every digital experience has a moment where a user decides whether to continue. This project focused on making that moment clearer, more useful, and easier to act on.</p><h2>The approach</h2><p>{project.detail}</p><h2>What mattered</h2><p>The work balanced user needs, business goals, and technical feasibility. Each decision was made to reduce uncertainty and help the next action feel natural.</p></div></div>
       </article>
-      <section className="case-study__contact"><div><p className="section-kicker section-kicker--light"><span>Next step</span></p><h2>Have a similar problem?</h2></div><a className="button button--light" href="mailto:pushpender.sharmaoffical@outlook.com">Contact me</a></section>
+      <section className="case-study__contact" aria-labelledby="fashion-contact-title"><div><p className="section-kicker section-kicker--light"><span>Next step</span></p><h2 id="fashion-contact-title">Have a similar problem?</h2></div><a className="button button--light" href="mailto:pushpender.sharmaoffical@outlook.com">Contact me</a></section>
       <PortfolioFooter />
     </main>
   );

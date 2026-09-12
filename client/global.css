@@ -50,7 +50,7 @@
   h1, h2, h3, h4, h5, h6 { font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif; }
   a, button { -webkit-tap-highlight-color: transparent; }
   :focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
-  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) { overflow-wrap: anywhere; }
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) { overflow-wrap: break-word; }
   ::selection { background: var(--lime); color: var(--ink); }
 }
 
@@ -290,12 +290,13 @@
   .case-study__contact { width: min(1200px, calc(100% - 40px)); margin: 0 auto 24px; display: flex; align-items: end; justify-content: space-between; gap: 30px; border: 1px solid rgba(255,255,255,.1); border-radius: 26px; background: var(--ink); color: white; padding: 47px 52px; }
   .case-study__contact .section-kicker { margin: 0 0 14px; }
   .case-study__contact h2 { color: white; font-size: clamp(38px, 5vw, 68px); line-height: .95; letter-spacing: -.08em; margin: 0; }
-  .case-study-shell > .site-footer, .about-page > .site-footer { width: min(1200px, calc(100% - 40px)); margin: 0 auto 24px; border-radius: 20px; background: var(--ink); padding: 26px 30px; }
+  .case-study-shell > .site-header, .case-study-shell > .site-footer, .case-study__contact { width: min(1200px, calc(100% - 40px)); }
+  .case-study-shell > .site-footer { margin: 0 auto 24px; border-radius: 20px; background: var(--ink); padding: 26px 30px; }
 
   .fashion-case-study-shell { background: var(--paper); }
-  .case-study--fashion { width: min(1360px, calc(100% - 40px)); padding: 54px 0 150px; }
+  .case-study--fashion { width: min(1200px, calc(100% - 40px)); padding: 54px 0 120px; }
   .case-study--fashion .case-study__back { margin-bottom: 58px; }
-  .fashion-hero { display: grid; grid-template-columns: minmax(0, .96fr) minmax(420px, 1.04fr); gap: clamp(50px, 8vw, 120px); align-items: center; }
+  .fashion-hero { display: grid; grid-template-columns: minmax(0, .96fr) minmax(320px, 1.04fr); gap: clamp(40px, 6vw, 90px); align-items: center; }
   .fashion-hero__copy { min-width: 0; }
   .fashion-hero .case-study__kicker { margin-bottom: 48px; }
   .fashion-eyebrow { color: var(--blue); font-size: 11px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 17px; }
@@ -307,17 +308,17 @@
   .fashion-section-heading { margin-bottom: 45px; }
   .fashion-section-number { color: var(--blue); font-size: 11px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 18px; }
   .fashion-section-heading h2 { max-width: 850px; color: var(--ink); font-size: clamp(48px, 6.3vw, 86px); line-height: .92; letter-spacing: -.08em; margin: 0; }
-  .fashion-overview { display: grid; grid-template-columns: minmax(300px, .9fr) minmax(0, 1.1fr); gap: clamp(50px, 11vw, 170px); align-items: start; border-top: 1px solid var(--line); margin-top: 150px; padding-top: 55px; }
-  .fashion-overview__copy { max-width: 650px; padding-top: 39px; }
+  .fashion-overview { width: min(1050px, 100%); display: grid; grid-template-columns: minmax(300px, .9fr) minmax(0, 1.1fr); gap: clamp(48px, 8vw, 105px); align-items: start; border-top: 1px solid var(--line); margin: 120px auto 0; padding-top: 55px; }
+  .fashion-overview__copy { max-width: 650px; padding-top: 0; }
   .fashion-overview__copy p, .fashion-copy-block p { color: var(--muted-text); font-size: 17px; line-height: 1.8; letter-spacing: .005em; margin: 0 0 25px; }
-  .fashion-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 65px; }
+  .fashion-facts { width: min(1050px, 100%); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 55px auto 0; }
   .fashion-fact { min-width: 0; padding: 31px 32px 34px; border: 1px solid rgba(16,17,20,.11); border-radius: 20px; background: rgba(255,255,255,.68); }
   .fashion-fact h3 { color: var(--ink); font-size: 25px; letter-spacing: -.055em; margin: 0 0 14px; }
   .fashion-fact p { color: var(--muted-text); font-size: 15px; line-height: 1.7; margin: 0; }
   .fashion-fact--details { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; border-color: rgba(255,255,255,.12); background: var(--ink); }
   .fashion-fact--details h3 { color: var(--lime); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
   .fashion-fact--details p { color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.8; }
-  .fashion-process { margin-top: 155px; border-radius: 26px; background: var(--ink); color: white; padding: 62px 56px 70px; }
+  .fashion-process { width: min(1050px, 100%); margin: 120px auto 0; border-radius: 26px; background: var(--ink); color: white; padding: 62px 56px 70px; }
   .fashion-process .fashion-section-number { color: var(--lime); }
   .fashion-process .fashion-section-heading h2 { color: white; }
   .fashion-process__steps { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; list-style: none; margin: 72px 0 0; padding: 0; }
@@ -325,7 +326,7 @@
   .fashion-process__steps li:not(:last-child)::after { content: ""; position: absolute; left: calc(50% + 30px); right: calc(-50% + 30px); top: 25px; height: 1px; background: rgba(255,255,255,.38); }
   .fashion-process__steps span { position: relative; z-index: 1; width: 50px; height: 50px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.58); border-radius: 50%; background: var(--ink); color: white; font-family: "Space Grotesk", sans-serif; font-size: 17px; font-weight: 700; }
   .fashion-process__steps strong { color: rgba(255,255,255,.75); font-size: 12px; line-height: 1.4; letter-spacing: .015em; }
-  .fashion-content-section, .fashion-value-section { width: min(1050px, 100%); margin: 155px auto 0; }
+  .fashion-content-section, .fashion-value-section { width: min(1050px, 100%); margin: 120px auto 0; }
   .fashion-content-section .fashion-section-heading, .fashion-value-section .fashion-section-heading { border-top: 1px solid var(--line); padding-top: 52px; }
   .fashion-figure { margin: 60px 0 0; }
   .fashion-figure__frame { overflow: hidden; border: 1px solid rgba(16,17,20,.12); border-radius: 22px; background: var(--surface); box-shadow: 0 18px 40px rgba(16,17,20,.06); }
@@ -369,7 +370,7 @@
   .fashion-value-card img { display: block; width: 100%; aspect-ratio: 1.15; object-fit: cover; border: 1px solid rgba(16,17,20,.12); border-radius: 18px; background: white; }
   .fashion-value-card h3 { color: var(--blue); font-size: 39px; line-height: 1; letter-spacing: -.06em; margin: 21px 0 10px; }
   .fashion-value-card p { color: var(--muted-text); font-size: 15px; line-height: 1.7; margin: 0; }
-  .fashion-final-section { width: min(1200px, 100%); margin: 155px auto 0; }
+  .fashion-final-section { width: min(1050px, 100%); margin: 120px auto 0; }
   .fashion-figure--final { margin-top: 0; }
   .fashion-figure--final .fashion-figure__frame { border-radius: 25px; }
   .about-page { background: var(--paper); }
@@ -412,6 +413,7 @@
 
 @media (max-width: 860px) {
   .site-header { width: min(100% - 36px, 680px); }
+  .case-study-shell > .site-header { width: min(100% - 36px, 680px); }
   .desktop-nav { display: none; }
   .menu-toggle { display: grid; place-items: center; }
   .mobile-nav { position: absolute; right: 0; top: 70px; min-width: 205px; display: flex; flex-direction: column; gap: 2px; padding: 8px; border: 1px solid var(--line); border-radius: 14px; background: white; box-shadow: 0 15px 30px rgba(18,26,51,.14); }
@@ -460,11 +462,10 @@
   .fashion-process__steps { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 38px; margin-top: 55px; }
   .fashion-process__steps li::after { display: none; }
   .fashion-content-section, .fashion-value-section { margin-top: 105px; }
-  .fashion-journey-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 45px; }
-  .fashion-wireframes-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 45px; }
-  .fashion-wireframes-layout > .fashion-figure { width: min(100%, 240px); }
-  .fashion-ui-layout { grid-template-columns: minmax(0, 1fr) minmax(220px, .65fr); gap: 45px; }
-  .fashion-ui-layout > .fashion-figure { width: min(100%, 240px); }
+  .fashion-journey-layout, .fashion-wireframes-layout, .fashion-ui-layout { grid-template-columns: 1fr; gap: 55px; }
+  .fashion-journey-layout > .fashion-figure { width: min(100%, 620px); justify-self: center; }
+  .fashion-wireframes-layout > .fashion-figure, .fashion-ui-layout > .fashion-figure { width: min(100%, 240px); justify-self: center; }
+  .fashion-journey-layout + .fashion-figure--research { margin-top: 75px; }
   .fashion-final-section { margin-top: 105px; }
   .case-study__hero { display: block; }
   .case-study__hero > p { max-width: 540px; margin-top: 25px; }
@@ -553,6 +554,7 @@
   .fashion-ui-layout > .fashion-figure { width: min(100%, 220px); justify-self: center; }
   .fashion-ui-layout + .fashion-mobile-grid { margin-top: 48px; }
   .fashion-content-section .fashion-section-heading, .fashion-value-section .fashion-section-heading { padding-top: 35px; }
+  .fashion-journey-layout__copy .fashion-section-heading, .fashion-wireframes-layout__copy .fashion-section-heading, .fashion-ui-layout__copy .fashion-section-heading { border-top: 0; padding-top: 0; }
   .fashion-figure { margin-top: 38px; }
   .fashion-figure__frame { border-radius: 15px; }
   .fashion-copy-block { margin-top: 34px; }
