@@ -88,21 +88,29 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   const isExternal = "externalUrl" in project;
   const projectUrl = isExternal ? project.externalUrl : `/work/${project.slug}`;
   const projectImage = "image" in project ? project.image : undefined;
+  const imageOnRight = project.number === "02";
   const linkLabel = project.number === "02" ? "View AI projects" : project.number === "03" ? "Learn more" : "View case study";
+  const cardClassName = `project-card project-card--${project.tone}${imageOnRight ? " project-card--image-right" : ""}`;
   const cardContent = (
     <>
-      <div className="project-card__header"><span>{project.number}</span><span>{project.category} for {project.period}</span></div>
       <div className="project-card__art" aria-hidden="true">
-        {"visual" in project && project.visual === "cosmic-after" ? <CosmicChatArtwork /> : projectImage ? <img className="project-card__image" src={projectImage} alt="" /> : <><div className="art-grid" /><div className="art-panel"><div className="art-panel__top"><i /><i /><i /></div><div className="art-panel__content"><span className="art-label">{project.client}</span><b>{project.feature}</b><span className="art-bar art-bar--wide" /><span className="art-bar" /><span className="art-bar art-bar--short" /><div className="art-button">View project</div></div></div><span className="art-stamp">{project.number}</span></>}
+        {"visual" in project && project.visual === "cosmic-after" && !projectImage ? <CosmicChatArtwork /> : projectImage ? <img className="project-card__image" src={projectImage} alt="" /> : <><div className="art-grid" /><div className="art-panel"><div className="art-panel__top"><i /><i /><i /></div><div className="art-panel__content"><span className="art-label">{project.client}</span><b>{project.feature}</b><span className="art-bar art-bar--wide" /><span className="art-bar" /><span className="art-bar art-bar--short" /><div className="art-button">View project</div></div></div><span className="art-stamp">{project.number}</span></>}
       </div>
-      <div className="project-card__body"><p className="project-card__client">{project.number === "01" ? "Womens Fashion" : project.client}</p><h3>{project.title}</h3><p>{project.description}</p><div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><span className="project-card__link">{linkLabel}</span></div>
+      <div className="project-card__body">
+        <div className="project-card__header"><span>{project.number}</span><span>{project.category} for {project.period}</span></div>
+        <p className="project-card__client">{project.number === "01" ? "Womens Fashion" : project.client}</p>
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+        <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+        <span className="project-card__link">{linkLabel}</span>
+      </div>
     </>
   );
 
   return isExternal ? (
-    <a href={projectUrl} className={`project-card project-card--small project-card--${project.tone}`} aria-label={`View ${project.client} project`} target="_blank" rel="noreferrer">{cardContent}</a>
+    <a href={projectUrl} className={cardClassName} aria-label={`View ${project.client} project`} target="_blank" rel="noreferrer">{cardContent}</a>
   ) : (
-    <Link to={projectUrl} className={`project-card project-card--small project-card--${project.tone}`} aria-label={`View ${project.client} ${project.number === "02" ? "AI projects" : "case study"}`}>{cardContent}</Link>
+    <Link to={projectUrl} className={cardClassName} aria-label={`View ${project.client} ${project.number === "02" ? "AI projects" : "case study"}`}>{cardContent}</Link>
   );
 }
 
