@@ -20,6 +20,11 @@ const fashionImages = {
 const processSteps = ["Research", "UX Design", "Branding", "UI Design", "User Testing", "Hand-off Dev"];
 
 const aiAvatarImage = "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F2f2997cd85b246a5b0d09fd653dffd56?format=webp&width=800&height=1200";
+const aiOutputImages = [
+  "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F6ec947fef6dd40cebdcbd15a829b2f99?format=webp&width=800&height=1200",
+  "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F91a925f334754e019b8329854d92fa64?format=webp&width=800&height=1200",
+  "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F497e1403f7574d349724070e0a97f7f5?format=webp&width=800&height=1200",
+] as const;
 
 const avatarProcess = [
   ["01", "Define diversity targets", "A representative range of skin tones, face shapes, ages, and hair types."],
@@ -339,9 +344,9 @@ function AiAvatarCaseStudy() {
             <h2 id="ai-result-title">See it in action.</h2>
           </div>
           <div className="ai-output-grid">
-            <article className="ai-output-card ai-output-card--portrait"><span>01</span><h3>Portrait-led jewelry look</h3><p>Photorealistic styling designed to make the piece feel wearable and aspirational.</p></article>
-            <article className="ai-output-card ai-output-card--detail"><span>02</span><h3>Detail-forward composition</h3><p>Close framing keeps the jewelry legible while preserving natural skin and light.</p></article>
-            <article className="ai-output-card ai-output-card--lifestyle"><span>03</span><h3>Lifestyle-ready variation</h3><p>New poses and contexts can be created without rebuilding the production setup.</p></article>
+            <article className="ai-output-card ai-output-card--portrait"><img src={aiOutputImages[0]} alt="AI avatar wearing a black pendant necklace" /><div><span>01</span><h3>Portrait-led jewelry look</h3><p>Photorealistic styling designed to make the piece feel wearable and aspirational.</p></div></article>
+            <article className="ai-output-card ai-output-card--detail"><img src={aiOutputImages[1]} alt="Close-up AI avatar jewelry portrait with a ring" /><div><span>02</span><h3>Detail-forward composition</h3><p>Close framing keeps the jewelry legible while preserving natural skin and light.</p></div></article>
+            <article className="ai-output-card ai-output-card--lifestyle"><img src={aiOutputImages[2]} alt="Lifestyle AI avatar wearing a bracelet with a child" /><div><span>03</span><h3>Lifestyle-ready variation</h3><p>New poses and contexts can be created without rebuilding the production setup.</p></div></article>
           </div>
         </section>
 
