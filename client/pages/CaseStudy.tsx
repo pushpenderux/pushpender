@@ -19,6 +19,29 @@ const fashionImages = {
 
 const processSteps = ["Research", "UX Design", "Branding", "UI Design", "User Testing", "Hand-off Dev"];
 
+const aiAvatarImage = "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F2f2997cd85b246a5b0d09fd653dffd56?format=webp&width=800&height=1200";
+
+const avatarProcess = [
+  ["01", "Define diversity targets", "A representative range of skin tones, face shapes, ages, and hair types."],
+  ["02", "Generate base avatars", "Generative AI models create photorealistic base portraits for each target."],
+  ["03", "Refine for realism", "Correct common AI artifacts in skin texture, hands, and facial symmetry."],
+  ["04", "Standardize lighting and pose", "Render every avatar in consistent studio lighting and neutral poses."],
+  ["05", "Curate the library", "Select and organize the final set into a reusable avatar library."],
+] as const;
+
+const avatarImpact = [
+  ["Unlimited variations", "Generate new skin tones, poses, and styles instantly — no re-shoot required."],
+  ["Faster turnaround", "Minutes instead of weeks, from concept to final image."],
+  ["Lower cost per image", "No incremental studio or model cost for additional looks."],
+  ["Consistent quality", "Uniform lighting and presentation across the entire catalog."],
+] as const;
+
+const avatarFuture = [
+  ["Expand categories", "Extend beyond jewelry to apparel and accessories."],
+  ["AR try-on", "Let customers preview pieces live through their camera."],
+  ["Motion avatars", "Short video content of avatars showcasing pieces in motion."],
+] as const;
+
 const valueCards = [
   {
     number: "01",
@@ -221,6 +244,153 @@ function WomensFashionCaseStudy() {
   );
 }
 
+function AiAvatarCaseStudy() {
+  return (
+    <main className="site-shell case-study-shell ai-case-study-shell">
+      <PortfolioHeader />
+      <article className="case-study ai-case-study">
+        <Link className="case-study__back" to="/#work">Back to Work</Link>
+
+        <header className="ai-case-study__hero">
+          <div className="ai-case-study__hero-copy">
+            <div className="case-study__kicker case-study__kicker--number-only"><span>02</span></div>
+            <p className="ai-case-study__eyebrow">AI product case study</p>
+            <h1>Reimagining Jewelry Photography <em>with AI Avatars</em></h1>
+            <p className="ai-case-study__summary">Photorealistic AI models wearing real jewelry — without a physical photoshoot.</p>
+          </div>
+          <div className="ai-case-study__hero-media">
+            <img src={aiAvatarImage} alt="AI avatar models styled with jewelry" />
+          </div>
+          <div className="ai-case-study__meta">
+            <div><strong>Client</strong><span>Angara Ecommerce</span></div>
+            <div><strong>Role</strong><span>Creative designer and AI workflow lead</span></div>
+            <div><strong>Focus</strong><span>AI imagery, art direction, and systems</span></div>
+          </div>
+        </header>
+
+        <section className="ai-section ai-overview" aria-labelledby="ai-overview-title">
+          <div className="ai-section__heading">
+            <p>Overview</p>
+            <h2 id="ai-overview-title">From a product photo to a catalog-ready image.</h2>
+          </div>
+          <div className="ai-section__copy">
+            <p>This case study looks at an AI-powered pipeline that takes a simple product photo of a jewelry piece — a ring, necklace, or pair of earrings cut out on a transparent PNG — and generates photorealistic images of it being worn by an AI avatar model.</p>
+            <p>The result is styled, lit, and framed like a professional catalog shot, without booking a model, renting a studio, or setting up a single camera.</p>
+          </div>
+        </section>
+
+        <section className="ai-section ai-problem" aria-labelledby="ai-problem-title">
+          <div className="ai-section__heading">
+            <p>The problem</p>
+            <h2 id="ai-problem-title">The true cost of a traditional shoot.</h2>
+          </div>
+          <div className="ai-problem-grid">
+            <article><span>01</span><h3>Studio rental</h3><p>Booking a professional studio and lighting setup for every session.</p></article>
+            <article><span>02</span><h3>Model fees</h3><p>Paying and scheduling professional models for each look.</p></article>
+            <article><span>03</span><h3>Camera and crew</h3><p>Equipment, photographers, and production staff on-site.</p></article>
+            <article><span>04</span><h3>Limited variety</h3><p>Re-shooting for every new skin tone, pose, or style.</p></article>
+          </div>
+        </section>
+
+        <section className="ai-section ai-solution" aria-labelledby="ai-solution-title">
+          <div className="ai-section__heading">
+            <p>The solution</p>
+            <h2 id="ai-solution-title">AI avatars, wearing your jewelry.</h2>
+          </div>
+          <div className="ai-solution__content">
+            <p>Upload a transparent PNG of the piece. The engine composites it onto a photorealistic AI avatar, matching lighting, skin tone, and pose automatically.</p>
+            <ul>
+              <li>No studio booking</li>
+              <li>No model scheduling</li>
+              <li>Unlimited looks, on demand</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="ai-section ai-process" aria-labelledby="ai-process-title">
+          <div className="ai-section__heading">
+            <p>The process</p>
+            <h2 id="ai-process-title">From product photo to studio shot.</h2>
+          </div>
+          <ol className="ai-process__grid">
+            <li><span>01</span><h3>Upload</h3><p>Add a transparent PNG of the jewelry piece.</p></li>
+            <li><span>02</span><h3>Select avatar</h3><p>Choose skin tone, pose, and styling.</p></li>
+            <li><span>03</span><h3>AI compositing</h3><p>Lighting, shadow, and fit rendered automatically.</p></li>
+            <li><span>04</span><h3>Export</h3><p>Download production-ready images.</p></li>
+          </ol>
+        </section>
+
+        <section className="ai-section ai-avatar-creation" aria-labelledby="ai-avatar-title">
+          <div className="ai-section__heading">
+            <p>Avatar creation</p>
+            <h2 id="ai-avatar-title">How the AI avatars were created.</h2>
+            <p className="ai-section__note">A reusable pipeline for building a diverse, consistent avatar library.</p>
+          </div>
+          <ol className="ai-avatar-steps">
+            {avatarProcess.map(([number, title, copy]) => (
+              <li key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="ai-section ai-result" aria-labelledby="ai-result-title">
+          <div className="ai-section__heading">
+            <p>The result</p>
+            <h2 id="ai-result-title">See it in action.</h2>
+          </div>
+          <div className="ai-output-grid">
+            <article className="ai-output-card ai-output-card--portrait"><span>01</span><h3>Portrait-led jewelry look</h3><p>Photorealistic styling designed to make the piece feel wearable and aspirational.</p></article>
+            <article className="ai-output-card ai-output-card--detail"><span>02</span><h3>Detail-forward composition</h3><p>Close framing keeps the jewelry legible while preserving natural skin and light.</p></article>
+            <article className="ai-output-card ai-output-card--lifestyle"><span>03</span><h3>Lifestyle-ready variation</h3><p>New poses and contexts can be created without rebuilding the production setup.</p></article>
+          </div>
+        </section>
+
+        <section className="ai-section ai-comparison" aria-labelledby="ai-comparison-title">
+          <div className="ai-section__heading">
+            <p>What this replaces</p>
+            <h2 id="ai-comparison-title">A lighter production model.</h2>
+          </div>
+          <div className="ai-comparison-table-wrap">
+            <table className="ai-comparison-table">
+              <thead><tr><th scope="col">Cost item</th><th scope="col">Traditional</th><th scope="col">AI avatars</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Model fees</th><td>Required</td><td>Eliminated</td></tr>
+                <tr><th scope="row">Studio rental</th><td>Required</td><td>Eliminated</td></tr>
+                <tr><th scope="row">Camera and equipment</th><td>Required</td><td>Eliminated</td></tr>
+                <tr><th scope="row">Retouching</th><td>Days</td><td>Minutes</td></tr>
+                <tr><th scope="row">Turnaround per look</th><td>1–2 weeks</td><td>Minutes</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="ai-section__note">The comparison reflects the production model described in the case study; final costs and timelines depend on the workflow and approval process.</p>
+        </section>
+
+        <section className="ai-section ai-impact" aria-labelledby="ai-impact-title">
+          <div className="ai-section__heading">
+            <p>The impact</p>
+            <h2 id="ai-impact-title">Why it matters.</h2>
+          </div>
+          <div className="ai-impact-grid">
+            {avatarImpact.map(([title, copy]) => <article key={title}><h3>{title}</h3><p>{copy}</p></article>)}
+          </div>
+        </section>
+
+        <section className="ai-section ai-future" aria-labelledby="ai-future-title">
+          <div className="ai-section__heading">
+            <p>What's next</p>
+            <h2 id="ai-future-title">Future scope.</h2>
+          </div>
+          <ol className="ai-future-list">
+            {avatarFuture.map(([title, copy], index) => <li key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{copy}</p></div></li>)}
+          </ol>
+        </section>
+      </article>
+      <section className="case-study__contact ai-case-study__contact" aria-labelledby="ai-contact-title"><div><p className="section-kicker section-kicker--light"><span>Next step</span></p><h2 id="ai-contact-title">Let's talk about what AI-generated imagery can do for your next collection.</h2></div><a className="button button--light" href="mailto:pushpender.sharmaoffical@outlook.com">Contact me</a></section>
+      <PortfolioFooter />
+    </main>
+  );
+}
+
 export default function CaseStudy() {
   const { slug } = useParams();
   const project = projects.find((item) => item.slug === slug);
@@ -231,6 +401,10 @@ export default function CaseStudy() {
 
   if (project.slug === "shop-lc-checkout") {
     return <WomensFashionCaseStudy />;
+  }
+
+  if (project.slug === "angara-creative-workflows") {
+    return <AiAvatarCaseStudy />;
   }
 
   const isAngaraProject = project.slug === "angara-creative-workflows";
