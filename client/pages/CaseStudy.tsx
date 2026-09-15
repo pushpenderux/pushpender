@@ -14,7 +14,7 @@ const fashionImages = {
   valueTwo: "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F7166ea835f454c9e89f580529c4772b5?format=webp&width=800&height=1200",
   valueThree: "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2Fee6967a999a54d6fa19842e2ef45d9fe?format=webp&width=800&height=1200",
   finalProduct: "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F4d0305cf917940fbb0f92f5ad7dbb124?format=webp&width=800&height=1200",
-  hero: "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F9fcd4bf80a614a09b27d8cadba80bd16?format=webp&width=800&height=1200",
+  hero: "https://cdn.builder.io/api/v1/image/assets%2Fa98f46cecf9b46458c97a073c7e06eda%2F7dfe100135a144e28d7337580e94fccb?format=webp&width=800&height=1200",
 };
 
 const processSteps = ["Research", "UX Design", "Branding", "UI Design", "User Testing", "Hand-off Dev"];
