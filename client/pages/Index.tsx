@@ -69,17 +69,28 @@ function SectionIntro({ number, eyebrow, title, copy }: { number: string; eyebro
 function CosmicChatArtwork() {
   return (
     <div className="cosmic-art">
-      <div className="cosmic-art__phone">
-        <div className="cosmic-art__status"><span>9:41</span><span>Connected</span></div>
-        <div className="cosmic-art__heading"><strong>Messages</strong><span>Search</span></div>
-        <div className="cosmic-art__list">
-          <div className="cosmic-art__chat"><span className="cosmic-art__avatar cosmic-art__avatar--violet">S</span><span><strong>Sarah Jenkins</strong><small>See you at the office tomorrow!</small></span><time>9:41</time></div>
-          <div className="cosmic-art__chat"><span className="cosmic-art__avatar cosmic-art__avatar--blue">D</span><span><strong>Dev Team</strong><small>The new build is live...</small></span><time>8:32</time></div>
-          <div className="cosmic-art__chat"><span className="cosmic-art__avatar cosmic-art__avatar--pink">M</span><span><strong>Mom</strong><small>Call me when you can.</small></span><time>Yesterday</time></div>
+      <div className="cosmic-art__comparison">
+        <div className="cosmic-art__stage">
+          <div className="cosmic-art__phone cosmic-art__phone--before">
+            <div className="cosmic-art__status"><span>9:41</span><span>•••</span></div>
+            <div className="cosmic-art__orbital"><span /><b>CosmicChat</b><small>Tap orbital core<br />to explore</small></div>
+          </div>
+          <span className="cosmic-art__stage-label">Before</span>
         </div>
-        <div className="cosmic-art__nav"><span className="is-active">Chats</span><span>People</span><span>Settings</span></div>
+        <div className="cosmic-art__stage">
+          <div className="cosmic-art__phone cosmic-art__phone--after">
+            <div className="cosmic-art__status"><span>9:41</span><span>Connected</span></div>
+            <div className="cosmic-art__heading"><strong>Messages</strong><span>Search</span></div>
+            <div className="cosmic-art__list">
+              <div className="cosmic-art__chat"><span className="cosmic-art__avatar cosmic-art__avatar--violet">S</span><span><strong>Sarah Jenkins</strong><small>See you at the office tomorrow!</small></span><time>9:41</time></div>
+              <div className="cosmic-art__chat"><span className="cosmic-art__avatar cosmic-art__avatar--blue">D</span><span><strong>Dev Team</strong><small>The new build is live...</small></span><time>8:32</time></div>
+              <div className="cosmic-art__chat"><span className="cosmic-art__avatar cosmic-art__avatar--pink">M</span><span><strong>Mom</strong><small>Call me when you can.</small></span><time>Yesterday</time></div>
+            </div>
+            <div className="cosmic-art__nav"><span className="is-active">Chats</span><span>People</span><span>Settings</span></div>
+          </div>
+          <span className="cosmic-art__stage-label">After</span>
+        </div>
       </div>
-      <span className="cosmic-art__label">After</span>
     </div>
   );
 }
@@ -94,7 +105,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   const cardContent = (
     <>
       <div className="project-card__art" aria-hidden="true">
-        {"visual" in project && project.visual === "cosmic-after" && !projectImage ? <CosmicChatArtwork /> : projectImage ? <img className="project-card__image" src={projectImage} alt="" /> : <><div className="art-grid" /><div className="art-panel"><div className="art-panel__top"><i /><i /><i /></div><div className="art-panel__content"><span className="art-label">{project.client}</span><b>{project.feature}</b><span className="art-bar art-bar--wide" /><span className="art-bar" /><span className="art-bar art-bar--short" /><div className="art-button">View project</div></div></div><span className="art-stamp">{project.number}</span></>}
+        {"visual" in project && project.visual === "cosmic-transformation" ? <CosmicChatArtwork /> : projectImage ? <img className="project-card__image" src={projectImage} alt="" /> : <><div className="art-grid" /><div className="art-panel"><div className="art-panel__top"><i /><i /><i /></div><div className="art-panel__content"><span className="art-label">{project.client}</span><b>{project.feature}</b><span className="art-bar art-bar--wide" /><span className="art-bar" /><span className="art-bar art-bar--short" /><div className="art-button">View project</div></div></div><span className="art-stamp">{project.number}</span></>}
       </div>
       <div className="project-card__body">
         <div className="project-card__header"><span>{project.number}</span><span>{project.category} for {project.period}</span></div>

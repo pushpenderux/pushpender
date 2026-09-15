@@ -158,6 +158,21 @@
   .cosmic-art__nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin: auto 8px 8px; padding: 7px 4px 5px; border-top: 1px solid #e3e4ef; color: var(--muted-text); font-size: 6px; text-align: center; }
   .cosmic-art__nav .is-active { color: var(--blue); font-weight: 700; }
   .cosmic-art__label { position: absolute; right: 9%; bottom: 7%; color: rgba(18,26,51,.3); font-family: "Space Grotesk", sans-serif; font-size: 42px; font-weight: 700; letter-spacing: -.1em; }
+  .cosmic-art { padding: 28px 18px; background: radial-gradient(circle at 50% 30%, #fbfaff 0, #eeeaff 54%, #dfe4ff 100%); }
+  .cosmic-art__comparison { width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: center; gap: clamp(10px, 2.5vw, 24px); }
+  .cosmic-art__stage { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .cosmic-art__stage .cosmic-art__phone { width: 142px; height: 280px; transform: none; box-shadow: 12px 14px 0 rgba(18,26,51,.13); }
+  .cosmic-art__phone--before { background: #f8f7ff; }
+  .cosmic-art__phone--after { background: #fbfbff; }
+  .cosmic-art__stage-label { color: rgba(18,26,51,.52); font-family: "Space Grotesk", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .cosmic-art__orbital { position: relative; flex: 1; display: grid; place-items: center; margin: 10px; border-radius: 50%; background: radial-gradient(circle, #e8ddff 0 15%, transparent 16%), repeating-radial-gradient(circle, transparent 0 25px, rgba(124,92,252,.22) 26px 27px); color: var(--ink); text-align: center; }
+  .cosmic-art__orbital::before, .cosmic-art__orbital::after { content: ""; position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+  .cosmic-art__orbital::before { top: 27%; left: 19%; }
+  .cosmic-art__orbital::after { right: 15%; bottom: 25%; background: var(--lime-dark); }
+  .cosmic-art__orbital span { position: absolute; width: 31px; height: 31px; border: 2px solid var(--blue); border-radius: 50%; background: white; box-shadow: 0 0 0 7px rgba(124,92,252,.13); }
+  .cosmic-art__orbital b, .cosmic-art__orbital small { position: relative; z-index: 1; display: block; }
+  .cosmic-art__orbital b { margin-top: 80px; font-family: "Space Grotesk", sans-serif; font-size: 13px; letter-spacing: -.05em; }
+  .cosmic-art__orbital small { margin-top: 7px; color: var(--muted-text); font-size: 7px; line-height: 1.35; }
   .project-card--blue .project-card__art { background: #dce6ff; }
   .project-card--lime .project-card__art { background: #ebf7b8; }
   .project-card--lavender .project-card__art { background: #ebe6ff; }
@@ -515,6 +530,11 @@
   .project-card__client { margin-top: 29px; }
   .project-card h3 { font-size: 31px; }
   .art-panel { width: 65%; }
+  .cosmic-art { padding: 20px 10px; }
+  .cosmic-art__comparison { gap: 8px; }
+  .cosmic-art__stage { gap: 8px; }
+  .cosmic-art__stage .cosmic-art__phone { width: 126px; height: 225px; }
+  .cosmic-art__stage-label { font-size: 10px; }
   .about__visual { min-height: 350px; }
   .about__visual-card { width: 76%; min-height: 245px; padding: 19px; }
   .about__visual-card p { font-size: 32px; }
