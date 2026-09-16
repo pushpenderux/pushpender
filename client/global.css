@@ -44,8 +44,8 @@
     @apply bg-background text-foreground;
     font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
     font-size: 16px;
-    line-height: 1.6;
-    letter-spacing: 0;
+    line-height: calc(1.6em + 10px);
+    letter-spacing: .01em;
   }
   h1, h2, h3, h4, h5, h6 { font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif; }
   a, button { -webkit-tap-highlight-color: transparent; }
@@ -314,9 +314,9 @@
   .ai-case-study__hero-copy { min-width: 0; }
   .ai-case-study__hero-copy .case-study__kicker { margin-bottom: 38px; }
   .ai-case-study__eyebrow, .ai-section__heading > p { color: var(--ai-gold); font-size: 11px; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 17px; }
-  .ai-case-study__hero h1 { max-width: 650px; color: var(--ink); font-size: clamp(54px, 6vw, 92px); line-height: .96; letter-spacing: -.06em; margin: 0; }
+  .ai-case-study__hero h1 { max-width: 590px; color: var(--ink); font-size: clamp(44px, 4.7vw, 70px); line-height: calc(.96em + 10px); letter-spacing: -.025em; margin: 0; }
   .ai-case-study__hero h1 em { color: var(--ai-gold); font-style: normal; }
-  .ai-case-study__summary { max-width: 530px; color: var(--muted-text); font-size: 18px; line-height: 1.72; letter-spacing: .005em; margin: 30px 0 0; }
+  .ai-case-study__summary { display: none; max-width: 530px; color: var(--muted-text); font-size: 18px; line-height: 1.72; letter-spacing: .005em; margin: 30px 0 0; }
   .ai-case-study__hero-media { height: 540px; overflow: hidden; border: 1px solid rgba(16,17,20,.12); border-radius: 26px; background: #3b2e25; box-shadow: 20px 22px 0 rgba(201,165,90,.2); transform: rotate(1.2deg); }
   .ai-case-study__hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
   .ai-case-study__meta { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; border-top: 1px solid var(--line); margin-top: 8px; padding-top: 21px; }
@@ -579,7 +579,7 @@
   .case-study__body aside { display: grid; grid-template-columns: 1fr 1.5fr; gap: 6px 18px; }
   .case-study__body aside strong { margin: 0 0 17px; }
   .ai-case-study__hero { gap: 32px; }
-  .ai-case-study__hero h1 { font-size: clamp(46px, 12vw, 68px); }
+  .ai-case-study__hero h1 { max-width: 100%; font-size: clamp(36px, 10vw, 54px); line-height: calc(1.05em + 10px); letter-spacing: -.015em; }
   .ai-case-study__summary { font-size: 17px; }
   .ai-case-study__hero-media { height: 300px; }
   .ai-case-study__meta { grid-template-columns: 1fr; gap: 15px; }

@@ -260,8 +260,7 @@ function AiAvatarCaseStudy() {
           <div className="ai-case-study__hero-copy">
             <div className="case-study__kicker case-study__kicker--number-only"><span>02</span></div>
             <p className="ai-case-study__eyebrow">AI product case study</p>
-            <h1>Reimagining Jewelry Photography <em>with AI Avatars</em></h1>
-            <p className="ai-case-study__summary">Photorealistic AI models wearing real jewelry — without a physical photoshoot.</p>
+            <h1>Photorealistic AI models wearing real jewelry, without a physical photoshoot.</h1>
           </div>
           <div className="ai-case-study__hero-media">
             <img src={aiAvatarImage} alt="AI avatar models styled with jewelry" />
