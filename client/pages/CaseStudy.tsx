@@ -338,15 +338,26 @@ function AiAvatarCaseStudy() {
           </ol>
         </section>
 
-        <section className="ai-section ai-result" aria-labelledby="ai-result-title">
+        <section className="ai-section ai-result" id="ai-result" aria-labelledby="ai-result-title">
           <div className="ai-section__heading">
             <p>The result</p>
             <h2 id="ai-result-title">See it in action.</h2>
           </div>
-          <div className="ai-output-grid">
-            <article className="ai-output-card ai-output-card--portrait"><img src={aiOutputImages[0]} alt="AI avatar wearing a black pendant necklace" /><div><span>01</span><h3>Portrait-led jewelry look</h3><p>Photorealistic styling designed to make the piece feel wearable and aspirational.</p></div></article>
-            <article className="ai-output-card ai-output-card--detail"><img src={aiOutputImages[1]} alt="Close-up AI avatar jewelry portrait with a ring" /><div><span>02</span><h3>Detail-forward composition</h3><p>Close framing keeps the jewelry legible while preserving natural skin and light.</p></div></article>
-            <article className="ai-output-card ai-output-card--lifestyle"><img src={aiOutputImages[2]} alt="Lifestyle AI avatar wearing a bracelet with a child" /><div><span>03</span><h3>Lifestyle-ready variation</h3><p>New poses and contexts can be created without rebuilding the production setup.</p></div></article>
+          <div className="ai-output-gallery" aria-label="AI avatar jewelry output gallery">
+            <figure className="ai-output-gallery__item ai-output-gallery__item--feature">
+              <img src={aiOutputImages[0]} alt="AI avatar wearing a black pendant necklace" />
+              <figcaption><span>01</span><div><strong>Portrait-led jewelry look</strong><p>Photorealistic styling designed to make the piece feel wearable and aspirational.</p></div></figcaption>
+            </figure>
+            <div className="ai-output-gallery__support">
+              <figure className="ai-output-gallery__item">
+                <img src={aiOutputImages[1]} alt="Close-up AI avatar jewelry portrait with a ring" />
+                <figcaption><span>02</span><div><strong>Detail-forward composition</strong><p>Close framing keeps the jewelry legible.</p></div></figcaption>
+              </figure>
+              <figure className="ai-output-gallery__item">
+                <img src={aiOutputImages[2]} alt="Lifestyle AI avatar wearing a bracelet with a child" />
+                <figcaption><span>03</span><div><strong>Lifestyle-ready variation</strong><p>New poses and contexts without a re-shoot.</p></div></figcaption>
+              </figure>
+            </div>
           </div>
         </section>
 
